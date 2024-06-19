@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+
+<section class="py-5 bg-light">
+    <p>Tu es Page 4 flow</p>
+    <div class="article">
+    <h2>Developpement Python</h2>
+
+    <h3>Les décorateurs</h3>
+        <p>En plus de Python de base, vous devez également être conscient de ce concept plus avancé en Python.</p>
+        <p>Les fonctions, et à peu près tout le reste en Python, sont des objets comme int or string.</p>
+        <p>Parce qu'ils sont des objets, vous pouvez faire plusieurs choses avec eux, à savoir :</p>
+        <p>Vous pouvez passer une fonction comme argument à une autre fonction de la même manière que vous passez un string or int comme argument de la fonction.</p>
+        <p>Les fonctions peuvent également être renvoyées par d'autres fonctions comme vous renverriez d'autres string or int valeurs.</p>
+        <p>Les fonctions peuvent être stockées dans des variables.</p>
+        <p>En fait, la seule différence entre les objets fonctionnels et les autres objets est que les objets fonctionnels contiennent la méthode magique __call__().</p>
+        <p>Un décorateur Python est simplement une fonction qui prend une fonction en argument et renvoie une version modifiée de la fonction qui a été transmise.</p>
+        <p>En d'autres termes, la fonction foo est un décorateur si elle prend en argument la fonction bar et retourne une autre fonction baz. </p>
+        <p>La fonction baz est une modification de bar en ce sens que dans le corps de baz, il y a un appel à la fonction bar.</p>
+        <p>Cependant, avant et après l'appel à bar, baz peut faire n'importe quoi.</p>
+        <p>C'était une bouchée ; voici un code pour illustrer la situation:</p>
+        <img src="{% static 'images/decorateur.jpg' %}" alt="html image example"/>
+
+        <p>Autre exemple: </p>
+        <p>Dans cet exemple, nous créons une fonction décorateur qui enregistrera le nom de la fonction qu'elle décore à chaque fois que cette fonction s'exécute.</p>
+        <p>Le décorateur prend en charge func comme argument. func est la fonction que nous décorons.</p>
+        <p>def create_logger(func):</p>
+    #   <p>     #The function body goes here</p>
+        <p>A l'intérieur de la fonction décorateur, nous allons créerate notre fonction modifiée qui enregistrera le nom de func avant de courir func.</p>
+        <p># Inside create_logger</p>
+        <p>def modified_func():</p>
+        <p>print("Calling: ", func.__name__)</p>
+        <p>func()</p>
+        <p>Ensuite, le create_logger fonction renverra la fonction modifiée. En conséquence, l'ensemble de notre create_logger la fonction ressemblera à ceci :</p>
+        <p>def create_logger(func):</p>
+        <p>def modified_func():</p>
+        <p>print("Calling: ", func.__name__)</p>
+        <p>func()</p>
+        <p>return modified_function</p>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+
+<section class="py-5 bg-light">
+    <p>Tu es Page 11 flow</p>
+    <div class="article">
+
+    </div>
+</section>
+
+{% endblock content %}
+
+<!--
+<div class="paginator">
+    <span>
+        {% if page_post.has_previous %}
+            <a href="?page=1">&laquo; première</a>
+            <a href="?page={{ page_post.previous_page_number }}"><button>précédente</button></a>
+        {% endif %}
+
+        <span>Page {{ page_post.number }} sur {{ page_post.paginator.num_pages }}.</span>
+
+        {% if page_post.has_next %}
+            <a href="?page={{ page_post.next_page_number }}"><button>suivante</button></a>
+            <a href="?page={{ page_post.paginator.num_pages }}"><button>dernière &raquo;</button></a>
+        {% endif %}
+    </span>
+</div>-->
+
