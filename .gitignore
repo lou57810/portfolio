@@ -1,3 +1,7 @@
 venv
 .idea
 .git
+.env
+.vs
+__pycache__
+__init__.py

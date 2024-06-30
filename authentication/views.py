@@ -27,7 +27,7 @@ class LoginPage(View):
             if user is not None:
                 login(request, user)
                 # return redirect('home')
-                return redirect('dashboard')
+                return redirect('home')
             else:
                 message = 'Identifiants ou pass invalides.'
         return render(

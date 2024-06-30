@@ -4,12 +4,55 @@
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
 
 <section class="py-5 bg-light">
-    <p>Tu es Page 11 flow</p>
+    <img class="img-fluid" alt="100%x280" src="{% static 'img11/banner.png' %}">
+    <h1>Projet 11</h1>
     <div class="article">
+    <h2>Objectif:</h2>
+    <h3>En tant que développeur Python dans ce projet, vous utiliserez des outils comme :
 
+    Sentry pour surveiller l'application et détecter rapidement les erreurs ;
+    Read The Docs pour documenter l'utilisation de l'application ;
+    et Github, Github compose, GitHub Actions ou GitLab pour les pipelines CI/CD qui automatisent les tests et le déploiement.
+
+        vous allez ajouter une démarche essentielle :
+        la factorisation d’une application existante pour améliorer sa maintenabilité, sa performance et sa scalabilité.
+        Vous identifierez et corrigerez les points faibles du code pour en améliorer la performance.
+</h3>
     </div>
 </section>
+<section>
+    <p>Dans ce projet, mon mentor préconise l'utilisation de github comme VCS(Version Control System), conjointement avec docker.
+    Celà nécéssite la création d'un fichier Dockefile.
+    <p>Ensuite le principe est d'utiliser une plateforme d'intégration continue pour mettre en oeuvre les pratiques Devops.
+    <p>Pour ce projet, comme indiqué dans les requis nous utilisons CircleCi,
+    plateforme CI/CD d'intégration continue et de livraison continue.
+    </p>
+    <p>CircleCI surveille les référentiels GitHub, et d'autres, et lance des builds pour chaque nouveau commit.
+    </p>
+    <p>CircleCi teste automatiquement les builds dans les conteneurs Docker ou les machines virtuelles, et déploie les
+    builds de passage vers les environnements cibles. Un tableau de bord et une API permettent de suivre l'état des builds
+    et les métriques liées aux builds. Une intégration Slack informe les équipes en cas de problèmes.</p>
+    <p>La prise en charge de SSH permet d'exécuter des tâches localement, et des mesures de sécurité empêchent la falsification.
+        CircleCi propose également une fonction d'approbation du flux de travail, qui met en pause le(s) jusqu'à ce qu'une
+        approbation manuelle soit donnée.
+    </p>
+    <h3>Orbs</h3>
+    <p>Les orbes sont des extraits partageables de YAML, qui peuvent être utilisés pour simplifier les builds CircleCi,
+    et éffectuer des déploiements.</p>
+    <p>CircleCi nécéssite la création d'un fichier config.yml</p>
+</section>
 
+<h2>Mise en place Docker</h2>
+<h4>Un conteneur Linux est un processus ou un ensemble de processus isolés du reste du système, tout en étants légers.</h4>
+<p>Il ne crée qu'une isolation des processus, et partage les ressources avec le système hôte.<br>
+En pratique le processus n'utilisera que la RAM nécéssaire laissant le reste disponible pour d'autres processus.<br>
+Les conteneurs étant légers et rapides au démarrage, il permettent de créer des environnements dynamiques et ainsi répondre à des besoins métiers.</p>
+<p>Docker a été créé pour répondre à des besoins de PaaS (Platform as a Service)</p>
+<img class="img-fluid" alt="100%x280" src="{% static 'img11/vm-vs-conteneur_small.png' %}">
+
+<p>Docker Hub est un service fourni par Docker Inc ; vous pouvez le comparer à GitHub, mais spécialisé dans le stockage d'image pour Docker.</p>
+<h2>Création du Dockerfile</h2>
+<p>Dockerfile doit être créé dans la racine du projet.</p>
 {% endblock content %}
 
 <!--
