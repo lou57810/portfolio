@@ -19,6 +19,7 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path("blogapi/", include("blogapi.urls")),
     path("admin/", admin.site.urls),
+    path("", include("blogapi.urls")),  # "" = url 127.0.0.1:8000 et renvoie sur blogapi
+
 ]
