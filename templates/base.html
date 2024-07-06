@@ -27,39 +27,42 @@
                         <span >Portfolio</span>
                     </a>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="{% url 'home' %}" class="nav-link text-light px-3">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#contact" class="nav-link text-light px-3">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'memento_display' %}" class="nav-link text-light px-3">Memento</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#params" class="nav-link text-light px-3">Parametres</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'photo_upload' %}" class="nav-link text-light px-3">Téléverser une photo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'upload_profile_photo' %}" class="nav-link text-light px-3">Changer la photo de profil</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                                <li class="nav-item">
-                                    <a href="{% url 'logout' %}" class="nav-link text-light px-3">Sign_out</a>
-                                </li>
-                            {% endif %}
-                            <li class="nav-item">
-                                <!--<a class="nav-link text-light px-3">Bonjour {{ user }} !</a>-->
-                                <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                        </ul>
-                        </div>
-                        <div class="avatar">
 
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="{% url 'home' %}" class="nav-link text-light px-3">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contact" class="nav-link text-light px-3">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'memento_display' %}" class="nav-link text-light px-3">Memento</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#params" class="nav-link text-light px-3">Parametres</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'photo_upload' %}" class="nav-link text-light px-3">Téléverser une photo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'upload_profile_photo' %}" class="nav-link text-light px-3">Changer la photo de profil</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li class="nav-item">
+                                        <a href="{% url 'logout' %}" class="nav-link text-light px-3">Sign_out</a>
+                                    </li>
+                                {% endif %}
+                                <li class="nav-item">
+                                    <!--<a class="nav-link text-light px-3">Bonjour {{ user }} !</a>-->
+                                    <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
+                                </li>
+                                <!--{\% if user.is_authenticated %}-->
+                            </ul>
+
+                        <div class="avatar">
+                            {% if user.is_authenticated %}
+                                <p>Salut, {{ user }} !</p>
+                                <!--<img class="avatar" src="{% static 'images/default_profile.png'%}">-->
                                 {% if user.profile_photo %}
                                     <img class="avatar" src="{{ user.profile_photo.url }}">
                                 {% else %}

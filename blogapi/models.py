@@ -48,8 +48,6 @@ class Article(models.Model):
             self.resize_image()
 
 
-
-
 class MementoItems(models.Model):
     item_name = models.CharField(max_length=128, verbose_name='item_name')
     item_explanation = models.CharField(max_length=128, verbose_name='item_explanation')
