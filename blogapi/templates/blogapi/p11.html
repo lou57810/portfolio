@@ -34,8 +34,10 @@
         <p>Dans ce projet, il est avisé d'utiliser github comme VCS(Version Control System),
            conjointement avec docker, circleci, ainsi que gunicorn et render.
            Celà nécéssite l'installation de docker, puis la création d'un fichier Dockefile.
-           Ensuite il faudra s'engeristrer sur Circleci et créer un fichier config.yml.
-           Il sera également nécéssaire de s'enregistrer sur Render et paramètrer Render pour diffuser le déploiement de
+           Tout ceci demande de s'enregistrer sur docker hub, circleci, et render.
+           Circleci requiert la cration d' un fichier config.yml.
+           Idem pour Docker, il faut créer un fichier Dockerfile.
+           Il faut paramètrer Render pour diffuser le déploiement de
            notre application.
            Le principe est d'utiliser une plateforme d'intégration continue pour mettre en oeuvre les pratiques DevOps.
            Pour ce projet, comme indiqué dans les requis nous utilisons CircleCi,
@@ -71,9 +73,51 @@
            C'est un document texte, utilisé pour la création d'une image conteneur(container).</p>
            <img class="img-fluid" alt="dockerfile" src="{% static 'img11/docker_file.png' %}">
            <img class="img-fluid" alt="dockerfile" src="{% static 'img11/doc_file.png' %}">
+        <p>Nous devons également créer un fichier .dockerignore afin d'alléger le build.</p>
+
+        <h4>Création du build localement:</h4>
+        <p>J'ai nommé le build ocr-docker-build dans le projet13,<br>
+            et la commande sera <code>docker build -t YOUR_USERNAME/ocr-docker-build</code> .<br>
+        <p>Pour le projet portfolio je la nommerai par exemple portfolio-dock-build.<br>
+        La commande sera <code>docker build -t YOUR_USERNAME/portfolio-dock-build</code> .
+        Docker va alors créer un conteneur pour chaque instruction,<br>
+        et le résultat sera sauvegardé dans une layer.<br>
+        Le résultat final étant un ensemble de layers qui construisent une image Docker complète.<br>
+        Si une layer ne bouge pas entre deux builds, Docker ne la reconstruira pas.<br>
+        Seules les layers situées après une layer qui se reconstruit seront elles aussi reconstruites.</p>
+        <h4>Lancement du build:</h4>
+        <p>Pour lancer le conteneur la commande sera : <code>docker run -d -p 8000:8000 ocr-docker-build</code><br>
+        '-p 8000' pour le port utilisé par l'application django, -d pour le mode détaché.<br>
+        Nous avons créé un conteneur avec l'option --detach  , et nous aurons donc sûrement besoin de l'arrêter !<br>
+        Pour cela, nous pouvons faire appel à la commande <code>docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN</code></p>
+        <p>A ce propos, quelques commandes docker.</p>
+        <h4>Commandes Docker de base:</h4>
+        <p>Affichage des images: <code>docker images</code> ou <code>docker image -a</code>.<br>
+           Affichage des containers utilisés: <code>docker ps</code>.<br>
+           Affichage de tous le containers: <code>docker ps -a</code>.<br>
+           Suppression container: <code>docker rm id_container</code>.<br>
+           Suppression d'une image:  <code>docker rmi id_image</code> ou <code>nom de l'image</code>.<br>
+           (Les premiers caractères de l'id suffisent. ex: <code>rm a0f</code> si id unique.)<br>
+           <code>docker prune</code> : Cette commande va supprimer les données suivantes :<br>
+           - l'ensemble des conteneurs Docker qui ne sont pas en status running ;<br>
+           - l'ensemble des réseaux créés par Docker qui ne sont pas utilisés par au moins un conteneur ;<br>
+           - l'ensemble des images Docker non utilisées ;<br>
+           - l'ensemble des caches utilisés pour la création d'images Docker.
+        </p>
+        <h4>Enfin partager l'image sur un registry Docker: </h4>
+        <p>Pour cela il faut créer notre image sur le Docker Hub (https://hub.docker.com/),<br>
+           la publier, et ainsi la rendre accessible à la communauté.<br>
+           La commande à utiliser: <br>
+           <code>docker tag ocr-docker-build:latest YOUR_USERNAME/ocr-docker-build:latest</code><br>
+           Cette commande va créer un lien entre notre image ocr-docker-build créée précédemment,
+           et l'image que nous voulons envoyer sur le Docker Hub YOUR_USERNAME/ocr-docker-build:latest
+        </p>
+        <p>la dernière commande nécessaire pour envoyer l'image vers le Docker Hub sera: <br>
+        <code>docker push YOUR_USERNAME/ocr-docker-build:latest</code></p>
     </div>
 </section>
 {% endblock content %}
+
 <!--
 <div class="paginator">
     <span>
