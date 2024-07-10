@@ -33,6 +33,11 @@
                                 <a href="{% url 'home' %}" class="nav-link text-light px-3">Home</a>
                             </li>
                             <li class="nav-item">
+                                <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
+                                <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
                                 <a href="#contact" class="nav-link text-light px-3">Contact</a>
                             </li>
                             <li class="nav-item">
@@ -47,16 +52,14 @@
                             <li class="nav-item">
                                 <a href="{% url 'upload_profile_photo' %}" class="nav-link text-light px-3">Changer la photo de profil</a>
                             </li>
+
+
+                            {% endif %}
+
                             {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a href="{% url 'logout' %}" class="nav-link text-light px-3">Sign_out</a>
                             </li>
-                            {% endif %}
-                            <li class="nav-item">
-                                <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
-                                <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
-                            </li>
-                            {% if user.is_authenticated %}
                         </ul>
 
                         <div class="avatar">
