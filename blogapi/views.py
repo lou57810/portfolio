@@ -26,9 +26,9 @@ def photo_upload(request):
 
 
 # @login_required
-def dashboard(request):
+def home(request):
     photos = models.Photo.objects.all()
-    return render(request, 'blogapi/dashboard.html', context={'photos': photos})
+    return render(request, 'blogapi/home.html', context={'photos': photos})
 
 
 @login_required
@@ -163,6 +163,11 @@ def display_project_11(request):
 def display_project_12(request):
     articles = models.Article.objects.all()
     return render(request, 'blogapi/p12.html')
+
+@login_required
+def display_todo(request):
+    articles = models.Article.objects.all()
+    return render(request, 'blogapi/todo.html')
 
 
 @login_required

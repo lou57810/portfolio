@@ -10,6 +10,7 @@ class LoginPage(View):
     form_class = forms.LoginForm
     # template_name = 'authentication/login_back.html'
     template_name = 'authentication/login.html'
+
     def get(self, request):
         form = self.form_class
         message = ''
@@ -26,12 +27,12 @@ class LoginPage(View):
             )
             if user is not None:
                 login(request, user)
-                # return redirect('home')
-                return redirect('dashboard')
+                return redirect('home')
             else:
                 message = 'Identifiants ou pass invalides.'
         return render(
             request, self.template_name, context={'form': form, 'message': message})
+
 
 def signup_page(request):
     form = forms.SignupForm()
