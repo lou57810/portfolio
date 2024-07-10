@@ -13,9 +13,8 @@ Cette commande crée un rep portfolio ainsi que l'executable manage.py
 
 Django installe deux applications dans deux dossiers séparés:
 	python manage.py startapp authentication
-	python manage.py startapp blog
-	- authentication
-	- blog
+	python manage.py startapp blogapi
+	
 
 python manage.py runserver (pour démarrer le programme)
 Accès page administrateur: http://127.0.0.1:8000/admin/	id: lou pass: edwood

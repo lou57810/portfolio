@@ -1,13 +1,15 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class User(AbstractUser):
+
     CREATOR = 'CREATOR'
-    SUBSCRIBER = 'SUBSCRIBER'
+    SUBSCRIBER = 'CONTRIBUTOR'
 
     ROLE_CHOICES = (
         (CREATOR, 'Créateur'),
-        (SUBSCRIBER, 'Abonné'),
+        (SUBSCRIBER, 'Contributeur'),
     )
 
     profile_photo = models.ImageField(verbose_name='photo de profil')
@@ -19,7 +21,7 @@ class User(AbstractUser):
         symmetrical=False,
         verbose_name='suit'
     )
-
+    """
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if self.role == self.CREATOR:
@@ -28,3 +30,4 @@ class User(AbstractUser):
         elif self.role == self.SUBSCRIBER:
             group = Group.objects.get(name='subscribers')
             group.user_set.add(self)
+    """

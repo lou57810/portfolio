@@ -1,0 +1,472 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<section id="lou" class="my-5">
+    <div class="container">
+        <div class="row gy-4 align-items-center">
+            <div class="col-12 col-md-6">
+                <!--<h1 class="fw-bold">Je suis {{ user }}(=anonymous user si non loggé) étudiant Développeur et Designer Web</h1>-->
+                <h1 class="fw-bold">Je suis {{ user }} étudiant Développeur et Designer Web</h1>
+                <h2 class="fw-light">Bienvenue dans mon espace d'apprentissage</h2>
+                <!--<a href="#essais" class="btn btn-primary mt-5">Mes essais</a>-->
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img_home/p_garde0.png' %}" alt="Photo Info" >
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Expertise -->
+<section id="expertise" class="py-5 bg-light">
+    <div class="container ">
+        <h2 class="mb-0">Mon Expertise</h2>
+        <h3 class="fw-light fs-5">Developpement Web et Design</h3>
+
+        <!-- Developpement -->
+        <div class="row gy-4 mt-4">
+            <div class="col-12 col-md-7">
+
+                <!-- Progress bar -->
+                <div class="mb-3 p-3 bg-white">
+                    <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-html5 fa-2x me-3 text-primary"></i>
+                                <p class="fw-bold m-0">HTML5</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="progress">
+                                <div class="progress-bar w-50" role="progressbar" aria-valuenow="50"
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 p-3 bg-white">
+                  <div class="row align-items-center">
+                    <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                      <div class="d-flex align-items-center">
+                        <i class="fab fa-css3-alt fa-2x me-3 text-primary"></i>
+                        <p class="fw-bold m-0">CSS3</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="progress">
+                        <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                             aria-valuemax="100">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 p-3 bg-white">
+                  <div class="row align-items-center">
+                    <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                      <div class="d-flex align-items-center">
+                        <i class="fab fa-js fa-2x me-3 text-primary"></i>
+                        <p class="fw-bold m-0">JS</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="progress">
+                        <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 p-3 bg-white">
+                  <div class="row align-items-center">
+                    <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                      <div class="d-flex align-items-center">
+                        <i class="fab fa-php fa-2x me-3 text-primary"></i>
+                        <p class="fw-bold m-0">PHP</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="progress">
+                        <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 p-3 bg-white">
+                  <div class="row align-items-center">
+                    <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                      <div class="d-flex align-items-center">
+                        <i class="fab fa-sass fa-2x me-3 text-primary"></i>
+                        <p class="fw-bold m-0">SASS</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="progress">
+                        <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+        <div class="col-12 offset-md-1 col-md-4">
+            <img src="{% static 'img_home/code.jpg' %}" alt="écran montrant du code php" width="100%">
+        </div>
+
+
+        <!-- Design -->
+        <div class="row gy-4 mt-4">
+            <div class="col-12 col-md-4">
+                <img src="{% static 'img_home/design.jpg' %}" alt="écran montrant un design" width="100%">
+            </div>
+                <div class="col-12 order-first offset-md-1 col-md-7 order-md-last">
+
+                    <!-- Progress bar -->
+                    <div class="mb-3 p-3 bg-white">
+                      <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                          <div class="d-flex align-items-center">
+                            <i class="fab fa-figma fa-2x me-3 text-primary"></i>
+                            <p class="fw-bold m-0">Figma</p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="progress">
+                            <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 p-3 bg-white">
+                      <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                          <div class="d-flex align-items-center">
+                            <!--<i class="fas fa-photo-video fa-2x me-3 text-primary"></i>-->
+                            <i class="fab fa-brands fa-bootstrap fa-2x me-3 text-primary"></i>
+                            <p class="fw-bold m-0">Bootstrap</p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="progress">
+                            <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 p-3 bg-white">
+                      <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                          <div class="d-flex align-items-center">
+                            <i class="fas fa-palette fa-2x me-3 text-primary"></i>
+                            <p class="fw-bold m-0">Design UI</p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="progress">
+                            <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 p-3 bg-white">
+                      <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                          <div class="d-flex align-items-center">
+                            <i class="fas fa-vial fa-2x me-3 text-primary"></i>
+                            <p class="fw-bold m-0">Design UX</p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="progress">
+                            <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 p-3 bg-white">
+                      <div class="row align-items-center">
+                        <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                          <div class="d-flex align-items-center">
+                            <i class="fab fa-brands fa-python fa-2x me-3 text-primary"></i>
+                            <p class="fw-bold m-0">Python</p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="progress">
+                            <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================================ caroussel ========================================-->
+
+<section id="portfolio" class="pt-5 pb-5">
+    <div class="container">
+        <h2 class="mb-0">Mon portfolio</h2>
+        <h3 class="fw-light fs-5">Projets perso et pro</h3>
+        <div class="row">
+            <div class="col-6">
+                <!--<h3 class="mb-3">Carousel cards title </h3>-->
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img1.png' %}" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet1</h4>
+                                            <p><b>Titre: Utilisez les bases de Python pour l'analyse de marché.</b></p>
+                                            <p class="card-text">"Books online." Git, env, Web Scraping with beautiful soup.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#p1.html" aria-controls="info_projet1">En savoir plus</button>-->
+                                            <a href="../blogapi/p1" class="btn btn-primary" >View Project1 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'images/img1.png' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img2.png' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet2</h4>
+                                            <p><b>Titre: Désignez une application Python adaptée aux besoins d'un client.</b></p>
+                                            <p class="card-text">"CodeIguanas." Creation with Figma.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet2" aria-controls="info_projet2">En savoir plus</button>-->
+                                            <a href="../blogapi/p2" class="btn btn-primary" >View Project2 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img2.png' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img3.png' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet3</h4>
+                                            <p><b>Titre: Développez un programme logiciel en Python</b></p>
+                                            <p class="card-text">"Tournament Chess Program." Tkinter, Design pattern structure MVC, POO, Pep8.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet3" aria-controls="info_projet3">En savoir plus</button>-->
+                                            <a href="../blogapi/p3" class="btn btn-primary" >View Project3 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img3.png' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img4.jpg' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet4</h4>
+                                            <p><b>Titre: Testez votre maîtrise du langage Python.</b></p>
+                                            <p class="card-text">Exercices code.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet4" aria-controls="info_projet4">En savoir plus</button>-->
+                                            <a href="../blogapi/p4" class="btn btn-primary" >View Project4 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img4.jpg' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img5.jpg' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet5</h4>
+                                            <p><b>Titre: Développez une interface utilisateur pour une application web Python.</b></p>
+                                            <p class="card-text">Just stream it. HTML Css Sass </p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet5" aria-controls="info_projet5">En savoir plus</button>-->
+                                            <a href="../blogapi/p5" class="btn btn-primary" >View Project5 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img5.jpg' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img6.jpg' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet6</h4>
+                                            <p><b>Titre: Résolvez des problèmes en utilisant des algorithmes en Python.</b></p>
+                                            <p class="card-text">Algos Notation Big O, brute force, optimisation.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet6" aria-controls="info_projet6">En savoir plus</button>-->
+                                            <a href="../blogapi/p6" class="btn btn-primary" >View Project6 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img6.jpg' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img7.png' %}" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet7</h4>
+                                            <p><b>Titre: Développez une application web en utilisant django.</b></p>
+                                            <p class="card-text">Django</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
+                                            <a href="../blogapi/p7" class="btn btn-primary" >View Project7 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img7.png' %}" role="button">Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img8.jpg' %}" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet8</h4>
+                                            <p><b>Titre: Créez une API sécurisée RESTful en utilisant Django REST.</b></p>
+                                            <p class="card-text">Postman, OAUTH2, OWASP, RGPD, Green Code.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
+                                            <a href="../blogapi/p8" class="btn btn-primary" >View Project8 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img8.jpg' %}" role="button">Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img9.jpg' %}" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet9</h4>
+                                            <p><b>Titre: Améliorez une application Web Python par des tests et du débogage.</b></p>
+                                            <p class="card-text">Django Bootstrap</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
+                                            <a href="../blogapi/p9" class="btn btn-primary" >View Project9 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img9.jpg' %}" role="button">Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img10.jpg' %}" >
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet10</h4>
+                                            <p><b>Titre: Développez une architecture back-end sécurisée avec python et SQL.</b></p>
+                                            <p class="card-text">"Epic Events" Django-Postman-RestApi.</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet10" aria-controls="info_projet10">En savoir plus</button>-->
+                                            <a href="../blogapi/p10" class="btn btn-primary" >View Project10 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img10.jpg' %}" role="button">Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img11.png' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet11</h4>
+                                            <p><b>Titre: Mettez à l'echelle une application Django en utilisant une architecture modulaire.</b></p>
+                                            <p class="card-text">Sentry méthodologie ci/cd, docker gunicorn, render.</p>
+                                            <!--<a class="btn btn-primary" data-bs-toggle="collapse" href="" aria-controls="info_projet11">View Articles</a>-->
+                                            <a href="../blogapi/p11" class="btn btn-primary" >View Project11 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img11.png' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img12.jpg' %}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Projet12</h4>
+                                            <p class="card-text">Python-Sqlachemy-MySQL</p>
+                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet12" aria-controls="info_projet12">En savoir plus</button>-->
+                                            <a href="../blogapi/p12" class="btn btn-primary" >View Project12 Articles</a>
+                                            <a href="../blogapi/create_article" class="btn btn-secondary" >Create Article</a>
+                                            <a class="btn btn-primary" href="{% static 'img_home/img12.jpg' %}" role="button" >Max</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="py-5 bg-white">
+        <div class="container">
+        <a href="../blogapi/todo" class="btn btn-primary" >todo</a>
+        <!--<p>Révision cours</p>
+        <p>Markdown</p>
+        <p>Projet13 args</p>-->
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-secondary">
+  <div class="container">
+    <h2>Un projet de création web ?</h2>
+    <h3>Allons en discuter autour d'un café</h3>
+
+    <div class="row mt-5">
+      <div class="col-5">
+        <img src="{% static 'img_home/grab-a-coffee.jpg' %}" alt="Image d'une tasse de café" width="100%">
+      </div>
+      <div class="offset-1 col-6">
+        <div class="bg-secondary h-100 w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
