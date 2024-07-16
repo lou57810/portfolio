@@ -1,9 +1,9 @@
-from django.contrib import admin
 from django.urls import path
-
-from django.conf import settings
-from django.conf.urls.static import static
 import authentication.views
-import blogapi.views
 
-from . import views
+urlpatterns = [
+    path('login/', authentication.views.LoginPage.as_view(), name='login'),
+    path('logout', authentication.views.logout_user, name='logout'),
+    path('signup', authentication.views.signup_page, name='signup'),
+    path('profile-photo/upload_profile_photo/', authentication.views.upload_profile_photo, name='upload_profile_photo'),
+]

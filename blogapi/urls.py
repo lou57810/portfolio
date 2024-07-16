@@ -1,22 +1,16 @@
-from django.contrib import admin
 from django.urls import path
-
 from django.conf import settings
 from django.conf.urls.static import static
-import authentication.views
+
+# import authentication.views
 import blogapi.views
 
-from . import views
-
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('login/', authentication.views.LoginPage.as_view(), name='login'),
-    path('logout', authentication.views.logout_user, name='logout'),
-    # path('home/', blogapi.views.home, name='home'),
+    # path('login/', authentication.views.LoginPage.as_view(), name='login'),
+    # path('logout', authentication.views.logout_user, name='logout'),
     path('', blogapi.views.home, name='home'),
-    path('signup', authentication.views.signup_page, name='signup'),
-    path('profile-photo/upload', authentication.views.upload_profile_photo, name='upload_profile_photo'),
-    path('blogapi/upload/', blogapi.views.photo_upload, name='photo_upload'),
+    path('blogapi/photo_upload/', blogapi.views.photo_upload, name='photo_upload'),
+    # path('profile-photo/upload', authentication.views.upload_profile_photo, name='upload_profile_photo'),
     path('blogapi/memento/', blogapi.views.memento_display, name='memento_display'),
     path('blogapi/add_memento/', blogapi.views.memento_create, name='memento_create'),
     path('blogapi/add_memento/<int:id_item>', blogapi.views.memento_create, name='memento_create'),
@@ -35,7 +29,7 @@ urlpatterns = [
     path('blogapi/p12/', blogapi.views.display_project_12, name='p12'),
     path('blogapi/todo/', blogapi.views.display_todo, name='todo'),
     path('blogapi/create_article/', blogapi.views.create_article, name='create-article'),
-]
+    ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

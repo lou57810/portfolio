@@ -33,16 +33,14 @@
                                 <a href="{% url 'home' %}" class="nav-link text-light px-3">Home</a>
                             </li>
                             <li class="nav-item">
-                                <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
-                                <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item">
                                 <a href="#contact" class="nav-link text-light px-3">Contact</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'memento_display' %}" class="nav-link text-light px-3">Memento</a>
                             </li>
+
+                            {% if user.is_authenticated %}
+
                             <li class="nav-item">
                                 <a href="#params" class="nav-link text-light px-3">Parametres</a>
                             </li>
@@ -52,25 +50,31 @@
                             <li class="nav-item">
                                 <a href="{% url 'upload_profile_photo' %}" class="nav-link text-light px-3">Changer la photo de profil</a>
                             </li>
-
-
-                            {% endif %}
-
-                            {% if user.is_authenticated %}
                             <li class="nav-item">
+                                <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
                                 <a href="{% url 'logout' %}" class="nav-link text-light px-3">Sign_out</a>
                             </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
+                                    <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
+                                </li>
+                            {% endif %}
                         </ul>
-
+                        {% if user.is_authenticated %}
                         <div class="avatar">
-
                               {% if user.profile_photo %}
                                 <img class="avatar" src="{{ user.profile_photo.url }}">
                               {% else %}
-                                <img class="avatar" src="{% static 'img_home/profile_photo.png' %}">
+                                <img class="avatar" src="{% static 'img_home/default_profile.png' %}">
                               {% endif %}
-                            {% endif %}
                         </div>
+                        {% else %}
+
+                        <div class="avatar">
+                            <img class="avatar" src="{% static 'img_home/default_profile.png' %}">
+                        </div>
+                        {% endif %}
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >

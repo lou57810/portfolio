@@ -1,17 +1,22 @@
 from django import forms
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
 
+User = get_user_model()  # Nécéssaire pour l'implémentation du logging avec email et la valeur dans settings.
+
+
 class SignupForm(UserCreationForm):
     class Meta(UserCreationForm):
-        model = get_user_model()
-        fields = ['username', 'email', 'first_name', 'last_name', 'role']
+        model = get_user_model()  # Nécéssaire pour l'implémentation du logging avec email et la valeur dans settings.
+        # model = User
+        fields = ['first_name', 'email']
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=63) #, label='Email')
-    password = forms.CharField(max_length=63) #, widget=forms.PasswordInput, label='Mot de passe')
+    email = forms.EmailField(max_length=64)  # , label='Email')
+    password = forms.CharField(max_length=64)  # , widget=forms.PasswordInput, label='Mot de passe')
 
 
 class UploadProfilePhotoForm(forms.ModelForm):
