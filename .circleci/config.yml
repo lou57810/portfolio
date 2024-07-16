@@ -1,0 +1,90 @@
+# Essai push git
+# CircleCI configuration file
+# description: An orb that display website
+version: 2.1
+
+# Orbs = reusable snippets of code that help automate repeated processes,
+# speed up project setup, and make it easy to integrate with third-party tools. 
+orbs:
+  docker: circleci/docker@2.1.3
+  python: circleci/python@2.0.3
+
+jobs:
+    pytest:
+        docker:
+            - image: cimg/python:3.10.2
+        steps:
+            - checkout
+            - python/install-packages:
+
+                pkg-manager: pip
+                pip-dependency-file: requirements.txt
+            - run:
+                name: execution pytest
+                command: python -m pytest
+
+                pkg-manager: pip
+                pip-dependency-file: requirements.txt
+            - run:
+                name: execution pytest
+                command: pytest
+
+    flake8:
+        docker:
+            - image: cimg/python:3.10.2
+        steps:
+            - checkout
+            - python/install-packages:
+                pkg-manager: pip
+                pip-dependency-file: requirements.txt
+            - run:
+                name: Install flake8
+                command: pip install flake8
+            - run:
+                name: Generation rapport flake
+                command: flake8
+
+    build:
+        docker:
+        # Primary container image where all steps run
+            - image: cimg/python:3.10.2
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: connection à Docker hub
+                command: echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USER_ID" --password-stdin
+
+            - run: 
+                name: Build Docker image
+                command: docker build -t lou57810/portfolio-docker-build .        # $name_image à rajouter dans circleci
+            - run:
+                name: Push docker hub image
+                command: docker push lou57810/portfolio-docker-build
+
+    deploy-to-render:
+        docker:
+            - image: curlimages/curl:latest
+        steps:
+            - run:
+                name: Call Hook Render
+                command: curl $DEPLOY_HOOK
+
+workflows:
+    test_build:
+        jobs:
+            - flake8
+            - pytest
+            - build:
+                filters:
+                    branches:
+                        only: main
+                requires:
+                    - pytest
+                    - flake8
+            - deploy-to-render:
+                filters:
+                    branches:
+                        only: main
+                requires:
+                    - build
