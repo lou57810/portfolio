@@ -5,12 +5,9 @@ venv
 .vs
 __pycache__
 __init__.py
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 db.sqlite3
-=======
-db.sqlite3
->>>>>>> develop
-=======
-db.sqlite3
->>>>>>> 5bbdda5af16b8d972aded96738ef3b471ab17df9
+
+
+
+
