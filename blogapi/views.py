@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from itertools import chain
-from django.forms import formset_factory
-from django.contrib.auth.decorators import login_required, permission_required
-from django.db.models import Q
-from django.views.generic import View
+# from itertools import chain
+# from django.forms import formset_factory
+from django.contrib.auth.decorators import login_required  # , permission_required
+# from django.db.models import Q
+# from django.views.generic import View
 from . import forms, models
 
 # Create your views here.
@@ -33,11 +33,13 @@ def memento_create(request, id_item=None):
     if request.method == 'POST':
         item_form = forms.ItemForm(request.POST, instance=instance_item)
         if item_form.is_valid():
-            mem_item = item_form.save()
+            # mem_item = item_form.save()
+            item_form.save()
             return redirect('../memento')
 
     # context = {'item_form': item_form, 'memento_items': memento_items}
     # return render(request, 'blogapi/add_memento.html', context=context)
+
 
 @login_required
 def delete_memento(request, id_item):
@@ -53,7 +55,7 @@ def photo_upload(request):
     if request.method == 'POST':
         form = forms.PhotoForm(request.POST, request.FILES)
         if form.is_valid():
-            photo = form.save(commit=False) # Pour ne pas sauvegarder dans la db
+            photo = form.save(commit=False)  # Pour ne pas sauvegarder dans la db
             # set the uploader to the user before saving the model
             photo.uploader = request.user
             # now we can save
@@ -63,57 +65,57 @@ def photo_upload(request):
 
 
 def display_project_1(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p1.html')
 
 
 def display_project_2(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p2.html')
 
 
 def display_project_3(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p3.html')
 
 
 def display_project_4(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p4.html')
 
 
 def display_project_5(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p5.html')
 
 
 def display_project_6(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p6.html')
 
 
 def display_project_7(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p7.html')
 
 
 def display_project_8(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p8.html')
 
 
 def display_project_9(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p9.html')
 
 
 def display_project_10(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p10.html')
 
 
 def display_project_11(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
 
     """
     followed_users_list = []
@@ -137,18 +139,17 @@ def display_project_11(request):
     page = request.GET.get('page')
     page_post = paginator.get_page(page)
     """
-    return render(request, 'blogapi/p11.html')
-         # context={'page_post': page_post})
+    return render(request, 'blogapi/p11.html')  # context={'page_post': page_post})
 
 
 def display_project_12(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p12.html')
 
 
 @login_required
 def display_todo(request):
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     return render(request, 'blogapi/todo.html')
 
 

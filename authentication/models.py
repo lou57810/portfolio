@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-from django.conf import settings
+# from django.conf import settings
 # from django.contrib.auth.models import UserManager
 from django.db import models
 
@@ -58,36 +58,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
-
-
-"""
-class User(AbstractUser):
-
-    CREATOR = 'CREATOR'
-    SUBSCRIBER = 'CONTRIBUTOR'
-
-    ROLE_CHOICES = (
-        (CREATOR, 'Créateur'),
-        (SUBSCRIBER, 'Abonné'),
-    )
-
-    profile_photo = models.ImageField(verbose_name='photo de profil')
-    role = models.CharField(max_length=30, choices=ROLE_CHOICES, verbose_name='role')
-    
-    follows = models.ManyToManyField(
-        'self',
-        limit_choices_to={'role': CREATOR},
-        symmetrical=False,
-        verbose_name='suit'
-    )
-
-    
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        if self.role == self.CREATOR:
-            group = Group.objects.get(name='creators')
-            group.user_set.add(self)
-        elif self.role == self.SUBSCRIBER:
-            group = Group.objects.get(name='subscribers')
-            group.user_set.add(self)
-    """

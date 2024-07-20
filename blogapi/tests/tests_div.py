@@ -13,6 +13,3 @@ def test_division():
     denominator = 0
     with pytest.raises(ZeroDivisionError):
         division(numerator, denominator)
-
-
-
