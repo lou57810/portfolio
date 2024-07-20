@@ -34,7 +34,6 @@ def memento_create(request, id_item=None):
         item_form = forms.ItemForm(request.POST, instance=instance_item)
         if item_form.is_valid():
             mem_item = item_form.save()
-            print('mem_item:', mem_item)
             return redirect('../memento')
 
     # context = {'item_form': item_form, 'memento_items': memento_items}
@@ -131,7 +130,7 @@ def display_project_11(request):
         chain(tickets, reviews),
         key=lambda instance: instance.time_created, reverse=True)
     """
-    articles = models.Article.objects.all()
+    # articles = models.Article.objects.all()
     # ordered_articles = chain(articles)
     """
     paginator = Paginator(ordered_articles, 4)
