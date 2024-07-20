@@ -4,7 +4,7 @@
 
 # Environment
 .env
-venv/
+# venv/
 
 # Pycharm
 .idea/

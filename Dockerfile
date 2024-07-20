@@ -16,7 +16,7 @@ WORKDIR /app
 # Allows docker to cache installed dependencies between builds
 RUN pip3 install  --upgrade pip
 RUN pip install --no-cache-dir -r /app/requirements.txt
-ADD db.sqlite3 /app
+ADD portfolio.db.sqlite3 /app
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
