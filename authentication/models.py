@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
@@ -26,7 +25,6 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-
 class Subscriber(AbstractBaseUser):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
@@ -48,4 +46,3 @@ class Subscriber(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return self.is_staff
-
