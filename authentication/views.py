@@ -2,13 +2,13 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import authenticate, login, logout
-# from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
+# from django.contrib.auth import get_user_model
 
 from . import forms
 
 # Create your views here.
-user = get_user_model()
+# user = get_user_model()
 
 
 class LoginPage(View):
@@ -39,13 +39,16 @@ class LoginPage(View):
 
 
 def signup_page(request):
-    form = forms.SignupForm()
+    # form = forms.SignupForm()
     if request.method == 'POST':
         form = forms.SignupForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
+            # user = form.save()
+            form.save()
+            # login(request, user)
             return redirect(settings.LOGIN_REDIRECT_URL)
+    else:
+        form = forms.SignupForm()
     return render(request, 'authentication/signup.html', context={'form': form})
 
 
@@ -61,4 +64,4 @@ def upload_profile_photo(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')

@@ -2,10 +2,10 @@ from django.contrib import admin
 
 # Register your models here.
 from blogapi.models import Photo, Blog, Article, MementoItems
-from .models import User
+from .models import Subscriber
 
 
-admin.site.register(User)
+admin.site.register(Subscriber)
 admin.site.register(Photo)
 admin.site.register(Blog)
 admin.site.register(Article)

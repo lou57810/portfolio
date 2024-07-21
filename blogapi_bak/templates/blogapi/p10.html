@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+
+<section class="py-5 bg-light">
+    <img class="img-fluid" alt="100%x280" src="{% static 'img10/banner.png' %}">
+    <p>Tu es Page 10 flow</p>
+    <div class="article">
+    <h2>Vous allez monter en compétences en développement back-end et réaliser des bases de données relationnelles avec SQL.
+        Vous assurerez la sécurisation et l’authentification du back-end.
+Dans ce projet, vous créerez l’architecture back-end et la mise en œuvre
+        d’une base de données sécurisée et de mécanismes d'authentification robustes.
+Vous vous plongerez aussi dans la modélisation de données relationnelles (ERD) et
+        dans l'utilisation d'outils comme Sentry pour la journalisation et le suivi des erreurs. </h2>
+<p>Notre objectif principal est de mettre en place une base de données qui permette
+    de stocker et de manipuler de manière sécurisée les informations de nos clients,
+    ainsi que les contrats et les événements que nous organisons.
+    Tu as travaillé sur notre site web qui utilise Django ;
+    nous souhaitons également utiliser Python pour notre système CRM.
+    Et nous attendons la journalisation avec Sentry, bien sûr !</p>
+    </div>
+</section>
+
+{% endblock content %}

@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+USE_TZ = False
 
 # Application definition
 
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL = 'authentication.User'
+AUTH_USER_MODEL = 'authentication.Subscriber'
 ROOT_URLCONF = 'portfolio.urls'
 
 TEMPLATES = [
@@ -102,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
