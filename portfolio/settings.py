@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1_*8(#4bji4sj01d$%udblmym+g2qlvfuw3fmw5(ezjyj6@*dm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,10 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'authentication',
     'blogapi',
 ]
+
+WHITENOISE_MANIFEST_STRICT = False  # Pour éviter l'erreur pytest : missing staticfiles manifest entry
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +56,13 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = 'authentication.Subscriber'
 ROOT_URLCONF = 'portfolio.urls'
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 TEMPLATES = [
     {
