@@ -54,6 +54,7 @@ def signup_page(request):
 
 def upload_profile_photo(request):
     form = forms.UploadProfilePhotoForm(instance=request.user)
+    print('request.user:', request.user)
     if request.method == 'POST':
         form = forms.UploadProfilePhotoForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():

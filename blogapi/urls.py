@@ -33,3 +33,8 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+"""Valable uniquement en developpement, avec DEBUG=True,
+    MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
+    MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
+    images téléversées."""

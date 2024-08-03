@@ -9,6 +9,16 @@
     <div class="article">
         <div class="container">
             <h3>Rappel des objectif:</h3>
+                <h5>Fork et Clone de l'application.</h5>
+                <h5>Lancement et test de l'application en local.</h5>
+                <h5>Réalisation d'une structure MVT pour l'application. Cela implique de modifier<br>
+                    les fichiers de models et migrations et de copier les données vers de nouvelles tables.
+                    Nous devons obtenir 3 appliactions: oc_lettings_site, profiles, et lettings.<br>
+                </h5>
+                <h5>L'application doit être fonctionnelle et autoriser l'accès à la partie admin.<br>
+                    (admin et pass: Abc1234!)</h5>
+                <h5>Installation de pytest-django pour réaliser les test à l'aide de pytest. La couverture<br>
+                     devra être supérieure à 80%.</h5>
                 <h5>En tant que développeur Python dans ce projet, vous utiliserez des outils comme :
                     Sentry pour surveiller l'application et détecter rapidement les erreurs ;
                     Read The Docs pour documenter l'utilisation de l'application ;
@@ -33,9 +43,9 @@
     <div class="container">
         <p>Dans ce projet, il est avisé d'utiliser github comme VCS(Version Control System),
            conjointement avec docker, circleci, ainsi que gunicorn et render.
-           Celà nécéssite l'installation de docker, puis la création d'un fichier Dockefile.
+           Celà nécéssite l'installation de docker, puis la création d'un fichier Dockerfile.
            Tout ceci demande de s'enregistrer sur docker hub, circleci, et render.
-           Circleci requiert la cration d' un fichier config.yml.
+           Circleci requiert la creation d' un fichier config.yml.
            Idem pour Docker, il faut créer un fichier Dockerfile.
            Il faut paramètrer Render pour diffuser le déploiement de
            notre application.
@@ -67,7 +77,9 @@
         <h4>Installer Docker</h4>
         <p>Pour utiliser Docker sur Windows Pro, il faudra télécharger la version stable de docker(# "edge" pour la version testing), l'installer, <br>
             et s'enregistrer, en rendant sur Docker hub (https://hub.docker.com/)<br>
-
+        <h4>Gunicorn</h4>
+        <p>Gunicorn, pour « Green Unicorn » (Licorne Verte), est un serveur web HTTP WSGI écrit en Python et disponible pour Unix.<br>
+           Pour utiliser gunicorn on l'ajoute dans le Dockerfile.(CMD ["gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"])</p>
 
         <h4>Création du Dockerfile</h4>
         <p>Dockerfile doit être créé dans la racine du projet.
@@ -77,8 +89,8 @@
         <p>Nous devons également créer un fichier .dockerignore afin d'alléger le build.</p>
 
         <h4>Création du build localement:</h4>
-        <p>J'ai nommé le build ocr-docker-build dans le projet13,<br>
-            et la commande sera <code>docker build -t YOUR_USERNAME/ocr-docker-build</code> .<br>
+        <p>J'ai nommé le build oc-lettings-site-build dans le projet13,<br>
+            et la commande sera <code>docker build -t YOUR_USERNAME/oc-lettings-site-build</code> .<br>
         <p>Pour le projet portfolio je la nommerai par exemple portfolio-dock-build.<br>
         La commande sera <code>docker build -t YOUR_USERNAME/portfolio-dock-build</code> .
         Docker va alors créer un conteneur pour chaque instruction,<br>
@@ -87,7 +99,7 @@
         Si une layer ne bouge pas entre deux builds, Docker ne la reconstruira pas.<br>
         Seules les layers situées après une layer qui se reconstruit seront elles aussi reconstruites.</p>
         <h4>Lancement du build:</h4>
-        <p>Pour lancer le conteneur la commande sera : <code>docker run -d -p 8000:8000 ocr-docker-build</code><br>
+        <p>Pour lancer le conteneur la commande sera : <code>docker run -d -p 8000:8000 oc-lettings-site-build</code><br>
         '-p 8000' pour le port utilisé par l'application django, -d pour le mode détaché.<br>
         Nous avons créé un conteneur avec l'option --detach  , et nous aurons donc sûrement besoin de l'arrêter !<br>
         Pour cela, nous pouvons faire appel à la commande <code>docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN</code></p>
@@ -109,17 +121,16 @@
         <p>Pour cela il faut créer notre image sur le Docker Hub (https://hub.docker.com/),<br>
            la publier, et ainsi la rendre accessible à la communauté.<br>
            La commande à utiliser: <br>
-           <code>docker tag ocr-docker-build:latest YOUR_USERNAME/ocr-docker-build:latest</code><br>
+           <code>docker tag ocr-docker-build:latest YOUR_USERNAME/oc-lettings-site-build:latest</code><br>
            Cette commande va créer un lien entre notre image ocr-docker-build créée précédemment,
            et l'image que nous voulons envoyer sur le Docker Hub YOUR_USERNAME/ocr-docker-build:latest
         </p>
         <p>les dernières commandes nécessaires pour envoyer l'image vers le Docker Hub seront: <br>
            <code>docker login</code><br>
             En fonction de votre système d'exploitation comme par exemple windows faire précéder de winpty les commandes.
-           <code>docker push YOUR_USERNAME/ocr-docker-build</code></p>
+           <code>docker push YOUR_USERNAME/ocr-docker-build:tagname (ici: latest)</code></p>
 
-    <h4>Gunicorn</h4>
-        <p>Gunicorn, pour « Green Unicorn » (Licorne Verte), est un serveur web HTTP WSGI écrit en Python et disponible pour Unix.</p>
+
 
     <h4>Whitenoise</h4>
         <p>Installation de whitenoise avec pip qui permet à python d'implémenter les fichiers statiques.<br>
@@ -129,7 +140,7 @@
         <h4>Render</h4>
         <p>Enregistrement et connexion sur Render</p>
         <p>Cliquer sur new (button) puis, choisir webservice, existing image<br>
-            (l'image sur docker.io à choisir(ex: lou57810/portfolio-docker-build),<br>
+            (l'image sur docker.io à choisir(ex: lou57810/oc-lettings-site-build),<br>
             laisser crédential blanc et appuyer sur connect. Renseigner nom, région, type de contrat(Ici Free),<br>
             et la variable d'environnement: SECRET_KEY (Celle définie par django ou nous-même). Cliquer ensuite<br>
             sur le bouton Deploywebservices</p>
@@ -142,8 +153,18 @@
             <h4>Orbs</h4>
             <p>Les orbes sont des extraits partageables de YAML, disponibles sur Docker Hub,
                qui peuvent être utilisés pour simplifier les builds CircleCi,
-               et éffectuer des déploiements.
-
+               et éffectuer des déploiements.</p>
+            <h4>Renseigner circleci project settings</h4>
+                <img src="{% static 'img11/circle_ci_env_variables.png' %}" alt="Image circleci_var_env" width="50%">
+               <p>Récuperer l'url deploy_hook dans render settings et l'ajouter dans la variable d'environnement<br>
+                  DEPLOY_HOOK dans  circleci Project settings.'</p>
+               <p>D'aurtres variables sont à renseigner:<br>
+               DEBUG = False (On est en production)<br>
+               DOCKER_HUB_PASSWORD<br>
+               DOCKER_USER_ID<br>
+               SECRET_KEY (Défini dans .env) <br>
+               dsn (Défini dans .env) </p>
+               <p>
         </div>
     </div>
 
