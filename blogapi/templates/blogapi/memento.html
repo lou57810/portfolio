@@ -10,12 +10,13 @@
         <p>Page Memento</p>
         {% for item in memento_items %}
             <li>
+                {{ item.item_name }} : {{ item.item_explanation }}
                 <a href="{% url 'delete_memento' id_item=item.id %}">Supprimer</a>
                 <a href="{% url 'memento_create' id_item=item.id %}">Modifier</a>
-                {{ item.item_name }} : {{ item.item_explanation }}
             </li>
         {% endfor %}
     </div>
+    <br>
     <div class="container">
         <a href="{% url 'memento_create' %}">Ajout Memento</a>
     </div>

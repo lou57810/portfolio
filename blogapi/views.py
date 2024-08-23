@@ -15,16 +15,18 @@ def home(request):
 
 
 def memento_display(request):
-    memento_items = models.MementoItems.objects.all()
+    # item_name alpha display.
+    memento_items = models.MementoItems.objects.all().order_by('item_name')
     item_form = forms.ItemForm()
+    for elt in memento_items:
+        print('elt:', elt.item_name)
 
     context = {'item_form': item_form, 'memento_items': memento_items}
     return render(request, 'blogapi/memento.html', context=context)
 
 
 @login_required
-def memento_create(request, id_item=None):
-    # item_form = forms.ItemForm()
+def memento_create(request, id_item=None):    
     instance_item = models.MementoItems.objects.get(pk=id_item) if id_item is not None else None
     if request.method == 'GET':
         item_form = forms.ItemForm(instance=instance_item)

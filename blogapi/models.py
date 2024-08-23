@@ -49,5 +49,5 @@ class Article(models.Model):
 
 
 class MementoItems(models.Model):
-    item_name = models.CharField(max_length=128, verbose_name='item_name')
-    item_explanation = models.CharField(max_length=128, verbose_name='item_explanation')
+    item_name = models.CharField(max_length=256)
+    item_explanation = models.CharField(max_length=1024, verbose_name='item_explanation')
