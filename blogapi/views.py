@@ -26,7 +26,7 @@ def memento_display(request):
 
 
 @login_required
-def memento_create(request, id_item=None):    
+def memento_create(request, id_item=None):
     instance_item = models.MementoItems.objects.get(pk=id_item) if id_item is not None else None
     if request.method == 'GET':
         item_form = forms.ItemForm(instance=instance_item)
