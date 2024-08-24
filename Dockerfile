@@ -18,7 +18,7 @@ RUN pip3 install  --upgrade pip
 RUN pip install --no-cache-dir -r /app/requirements.txt
 RUN python manage.py collectstatic --noinput
 
-# ADD db.sqlite3 /app
+ADD portfolio.sqlite3 /app
 
 
 EXPOSE 8000
