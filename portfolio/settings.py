@@ -134,12 +134,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+
 # STATIC_URL = '/staticfiles/'
 # STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
 # STATICFILES_DIRS = [BASE_DIR.joinpath('staticfiles/')]
 # STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
+STATIC_URL = '/static/'
 # LOGIN_URL = 'login'
 
 # Apres login redirection sur home
@@ -147,8 +148,8 @@ LOGIN_REDIRECT_URL = 'home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-MEDIA_URL = '/media/'   # images téléchargées par les utilisateurs loggés
-MEDIA_ROOT = BASE_DIR.joinpath('media/')
+# MEDIA_URL = '/media/'   # images téléchargées par les utilisateurs loggés
+# MEDIA_ROOT = BASE_DIR.joinpath('media/')
 # MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
