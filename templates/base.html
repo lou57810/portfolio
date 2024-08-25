@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
-    {% load static %}
-    {% load staticfile %}
+    {% load static %}    
 
     <head>
         <meta charset="utf-8">
@@ -74,13 +73,13 @@
                               {% if user.profile_photo %}
                                 <img class="avatar" src="{{ user.profile_photo.url }}">
                               {% else %}
-                                <img class="avatar" src="{% staticfile 'img_home/default_profile.png' %}">
+                                <img class="avatar" src="{% static 'img_home/default_profile.png' %}">
                               {% endif %}
                         </div>
                         {% else %}
 
                         <div class="avatar">
-                            <img class="avatar" src="{% staticfile 'img_home/default_profile.png' %}">
+                            <img class="avatar" src="{% static 'img_home/default_profile.png' %}">
                         </div>
                         {% endif %}
 
