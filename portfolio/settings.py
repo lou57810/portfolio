@@ -136,19 +136,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-
-# STATIC_URL = '/staticfiles/'
-# STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
-# STATICFILES_DIRS = [BASE_DIR.joinpath('staticfiles/')]
-# STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
-# STATIC_ROOT = os.path.join(BASE_DIR / 'static')
-
-# LOGIN_URL = 'login'
-
 # Apres login redirection sur home
 LOGIN_REDIRECT_URL = 'home'
-# Default primary key field type
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 STATIC_URL = 'static/'
 
@@ -156,13 +146,10 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-fields
 MEDIA_URL = '/media/'   # images téléchargées par les utilisateurs loggés
 MEDIA_ROOT = BASE_DIR.joinpath('media/')
-# MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
-# MEDIA_ROOT = '/media/'
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 """MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
     MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
     images téléversées."""
