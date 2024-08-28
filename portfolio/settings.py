@@ -139,8 +139,8 @@ USE_TZ = True
 # Apres login redirection sur home
 LOGIN_REDIRECT_URL = 'home'
 
-STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 
 STATICFILES_DIRS = [BASE_DIR / "static", ]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-fields
@@ -149,7 +149,7 @@ MEDIA_ROOT = BASE_DIR.joinpath('media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 """MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
     MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
     images téléversées."""
