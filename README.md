@@ -17,11 +17,6 @@ Django installe deux applications dans deux dossiers séparés:
 	
 
 python manage.py runserver (pour démarrer le programme)
-Accès page administrateur: http://127.0.0.1:8000/admin/	id: lou pass: edwood
+Accès page administrateur: http://127.0.0.1:8000/admin/	id: lou pass: lou
 
-Accès page web: http://127.0.0.1:8000/	id: lou pass: edwood
-
-
-	
-
-
+Accès page web: http://127.0.0.1:8000/	id: lou@localhost pass: edwood

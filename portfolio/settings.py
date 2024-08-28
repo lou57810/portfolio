@@ -31,6 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
+# DEBUG = DEBUG.lower() in ('true', '1', 'yes', 'on')
+print('debug:', DEBUG)
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'authentication',
     'blogapi',
@@ -139,19 +141,27 @@ USE_TZ = True
 # STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
 # STATICFILES_DIRS = [BASE_DIR.joinpath('staticfiles/')]
 # STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+
 # LOGIN_URL = 'login'
 
 # Apres login redirection sur home
 LOGIN_REDIRECT_URL = 'home'
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
+STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [BASE_DIR / "static", ]
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-fields
 MEDIA_URL = '/media/'   # images téléchargées par les utilisateurs loggés
 MEDIA_ROOT = BASE_DIR.joinpath('media/')
 # MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
+# MEDIA_ROOT = '/media/'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 """MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
     MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les

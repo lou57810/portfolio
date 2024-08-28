@@ -18,8 +18,6 @@ def memento_display(request):
     # item_name alpha display.
     memento_items = models.MementoItems.objects.all().order_by('item_name')
     item_form = forms.ItemForm()
-    for elt in memento_items:
-        print('elt:', elt.item_name)
 
     context = {'item_form': item_form, 'memento_items': memento_items}
     return render(request, 'blogapi/memento.html', context=context)

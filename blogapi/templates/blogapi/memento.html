@@ -7,18 +7,22 @@
 
 <section class="py-5">
     <div class="container">
-        <p>Page Memento</p>
+        <a href="{% url 'memento_create' %}"><button type="button" class="btn btn-success">Ajout Memento</button></a>
+    </div><br>
+    <div class="container">
         {% for item in memento_items %}
             <li>
-                {{ item.item_name }} : {{ item.item_explanation }}
-                <a href="{% url 'delete_memento' id_item=item.id %}">Supprimer</a>
-                <a href="{% url 'memento_create' id_item=item.id %}">Modifier</a>
-            </li>
+                <span  style="display:inline-block; width:150px;" > {{ item.item_name }} :</span>
+                <span style="display:inline-block; width:800px;">{{ item.item_explanation }}</span>
+   
+                <a href="{% url 'memento_create' id_item=item.id %}"><button type="button" class="btn btn-warning">Modifier</button></a> &emsp;
+                <a href="{% url 'delete_memento' id_item=item.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+            </li><br>
         {% endfor %}
     </div>
     <br>
     <div class="container">
-        <a href="{% url 'memento_create' %}">Ajout Memento</a>
+        <a href="{% url 'memento_create' %}"><button type="button" class="btn btn-success">Ajout Memento</button></a>
     </div>
 </section>
 

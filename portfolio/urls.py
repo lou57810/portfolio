@@ -13,11 +13,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("blogapi.urls")),  # "" = url 127.0.0.1:8000 et renvoie sur blogapi
     path("", include("authentication.urls")),
-]
+] 
 
 if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# if settings.DEBUG:
+    # urlpatterns += static(
+        # settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 """Valable uniquement en developpement, avec DEBUG=True,
     MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
     MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
