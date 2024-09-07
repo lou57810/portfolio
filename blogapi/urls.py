@@ -2,15 +2,16 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-# import authentication.views
 import blogapi.views
 
-urlpatterns = [
-    # path('login/', authentication.views.LoginPage.as_view(), name='login'),
-    # path('logout', authentication.views.logout_user, name='logout'),
+urlpatterns = [    
     path('', blogapi.views.home, name='home'),
-    path('blogapi/photo_upload/', blogapi.views.photo_upload, name='photo_upload'),
-    # path('profile-photo/upload', authentication.views.upload_profile_photo, name='upload_profile_photo'),
+    path('blogapi/create_card_post', blogapi.views.card_and_photo_upload, name='create-card-post'),
+    path('blogapi/photo_upload/', blogapi.views.card_and_photo_upload, name='photo-upload'),
+    path('blogapi/album_photos/', blogapi.views.album_photos, name='album-photos'),
+    path('blogapi/<int:card_id>/edit_card/', blogapi.views.edit_card, name='edit-card'),
+    path('blogapi/<int:card_id>/delete_card/', blogapi.views.delete_card, name='delete-card'),
+    path('blogapi/<int:card_id>', blogapi.views.card_view, name='card_view'),
     path('blogapi/memento/', blogapi.views.memento_display, name='memento_display'),
     path('blogapi/add_memento/', blogapi.views.memento_create, name='memento_create'),
     path('blogapi/add_memento/<int:id_item>', blogapi.views.memento_create, name='memento_create'),

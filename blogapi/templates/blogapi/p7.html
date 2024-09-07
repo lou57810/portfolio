@@ -2,17 +2,18 @@
 {% load static %}
 {% block content %}
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+<div class="container">
+    <section class="py-5 bg-light">
+        <p>Tu es Page 7 flow</p>
+        <div class="article">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/banner.png'' %}">
+        <h2>Après un entretien réussi, vous décrochez le poste de Lead Développeur Python pour la jeune start-up LITRevu.
+            Son objectif est de commercialiser un produit permettant à une communauté d'utilisateurs
+            de publier des critiques de livres
+            ou d’articles et de consulter ou de solliciter une critique de livres à la demande.</h2>
 
-<section class="py-5 bg-light">
-    <p>Tu es Page 7 flow</p>
-    <div class="article">
-        <img class="img-fluid" alt="100%x280" src="{% static 'img7/banner.png'' %}">
-    <h2>Après un entretien réussi, vous décrochez le poste de Lead Développeur Python pour la jeune start-up LITRevu.
-        Son objectif est de commercialiser un produit permettant à une communauté d'utilisateurs
-        de publier des critiques de livres
-        ou d’articles et de consulter ou de solliciter une critique de livres à la demande.</h2>
-
-    </div>
-</section>
+        </div>
+    </section>
+</div>
 
 {% endblock content %}

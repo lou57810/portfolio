@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="py-5 bg-light">
+        <div class="container" >
+            
+            <div class="row mt-4">
+            {% for card in cards %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="post">
+                                <h5 class="card-title">{{ card.title }}</h5>
+                                <!--<img class="img-fluid" alt="100%x280" src="\{% static 'img_home/img14.jpg' %\}" >-->
+                                <img class="card-img-top" alt="100%x280" src="{{ card.photo.image.url }}" >
+                                <h5 class="card-title">{{ card.content }}</h5>
+                            <p></p>
+                            </div>
+                        </div>
+                        <p><a href="{% url 'edit-card' card_id=card.id %}" class="btn btn-warning mr-4">Modifier</a>
+                        <a href="{% url 'delete-card' card_id=card.id %}" class="btn btn-danger">Supprimer</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        <div>
+        <p><a href="{% url 'create-card-post' %}" class="btn btn-primary">Ajouter une carte</a></p>
+        </div>
+    </section>
+            
+    </div>
+{% endblock content %}

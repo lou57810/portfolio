@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h2>{{ card.title }}</h2>
+        <p><a href="{% url 'edit_card' card.id %}">Modifier la carte</a></p>
+        <img src="{{ card.photo.image.url }}">
+        <p>{{ card.photo.caption }}</p>
+        <p>{{ card.content }}</p>
+    </div>
+{% endblock content %}

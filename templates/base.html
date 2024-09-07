@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
     {% load static %}
 
     <head>
@@ -19,7 +19,7 @@
         <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
 
     </head>
-    <!----------------------- Fin en-tête ----------------------->
+    <!-- --------------------- Fin en-tête --------------------- -->
     <body class='snippet-body'>
         <header class="py-4">
             <nav class="navbar navbar-expand-xxl fixed-top navbar-light bg-dark">
@@ -48,22 +48,19 @@
                                 <a href="#favoris" class="nav-link text-light px-3">Favoris</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'photo_upload' %}" class="nav-link text-light px-3">Téléverser une photo</a>
+                                <a href="{% url 'album-photos' %}" class="nav-link text-light px-3">Album Photo</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'upload_profile_photo' %}" class="nav-link text-light px-3">Changer la photo de profil</a>
                             </li>
                             <li class="nav-item">
-                                <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
                                 <a href="{% url 'logout' %}" class="nav-link text-light px-3">Sign_out</a>
                             </li>
                             {% else %}
                                 <li class="nav-item">
-                                    <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
                                     <a href="{% url 'login' %}" class="nav-link text-light px-3">Sign_in</a>
                                 </li>
                                 <li class="nav-item">
-                                    <!--<a class="nav-link text-light px-3">Bonjour \{\{ user }} !</a>-->
                                     <a href="{% url 'signup' %}" class="nav-link text-light px-3">Sign_up</a>
                                 </li>
                             {% endif %}

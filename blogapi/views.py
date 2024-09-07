@@ -37,9 +37,6 @@ def memento_create(request, id_item=None):
             item_form.save()
             return redirect('../memento')
 
-    # context = {'item_form': item_form, 'memento_items': memento_items}
-    # return render(request, 'blogapi/add_memento.html', context=context)
-
 
 @login_required
 def delete_memento(request, id_item):
@@ -48,10 +45,19 @@ def delete_memento(request, id_item):
     # messages.success(request, "Memento supprimé.")
     return redirect('../memento')
 
+# ALBUM PHOTO 
+@login_required
+def album_photos(request):
+    # photos = models.Card.objects.all()
+    cards = models.Card.objects.all()
+    # return render(request, 'blogapi/album_photos.html', context={'photos': photos})
+    return render(request, 'blogapi/album_photos.html', context={'cards': cards})
+
 
 @login_required
 def photo_upload(request):
     form = forms.PhotoForm()
+
     if request.method == 'POST':
         form = forms.PhotoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,7 +67,96 @@ def photo_upload(request):
             # now we can save
             photo.save()
             return redirect('home')
-        return render(request, 'blogapi/photo_upload.html', context={'form': form})
+    photos = models.Photo.objects.all()
+    return render(request, 'blogapi/photo_upload.html', context={'form': form})
+
+
+"""
+def photo_delete(request, id):
+    photo = Photos.objects.get(id=id)  # nécessaire pour GET et pour POST
+
+    if request.method == 'POST':
+        # supprimer le groupe de la base de données
+        photo.delete()
+        # rediriger vers la liste des groupes
+        return redirect('photo-upload')
+
+    return render(request,
+                    'blogapi/photo_delete.html',
+                    {'photo': photo})
+"""
+def delete_card(request, card_id):
+    print('card_id:', card_id)
+    card = get_object_or_404(models.Card, id=card_id)
+    print('cardl:', card)
+    # edit_form = forms.CardForm(instance=card)
+    delete_form = forms.DeleteCardForm()
+    if request.method == 'POST':
+        if 'delete_card' in request.POST:
+            delete_form = forms.DeleteCardForm(request.POST)
+            if delete_form.is_valid():
+                card.delete()
+                return redirect('album-photos')
+    context = {'delete_form': delete_form,}
+    return render(request, 'blogapi/delete_card.html', context=context)
+
+
+@login_required
+def card_and_photo_upload(request):
+    card_form = forms.CardForm()
+    photo_form = forms.PhotoForm()
+    if request.method == 'POST':
+        card_form = forms.CardForm(request.POST)
+        photo_form = forms.PhotoForm(request.POST, request.FILES)
+        if all([card_form.is_valid(), photo_form.is_valid()]):
+            photo = photo_form.save(commit=False)
+            photo.uploader = request.user
+            photo.save()
+            card = card_form.save(commit=False)
+            card.author = request.user
+            card.photo = photo
+            card.save()
+            return redirect('album-photos')
+    # photos = models.Photo.objects.all()
+    # cards = models.Blog.objects.all()
+    context = {
+        'card_form': card_form,
+        'photo_form': photo_form,
+        }
+    return render(request, 'blogapi/create_card_post.html', context=context)
+
+
+@login_required
+def card_view(request, card_id):
+    card = get_object_or_404(models.Card, id=card_id)
+    return render(request, 'blogapi/card_view.html', {'card': card})
+
+
+@login_required
+def edit_card(request, card_id):
+
+    card = get_object_or_404(models.Card, id=card_id)
+    edit_form = forms.CardForm(instance=card)
+    delete_form = forms.DeleteCardForm()
+    if request.method == 'POST':
+        if 'display_card' in request.POST:
+            edit_form = forms.CardForm(request.POST, instance=card)
+            if edit_form.is_valid():
+                edit_form.save()
+                return redirect('album-photos')
+            """
+            if 'delete_card' in request.POST:
+                delete_form = forms.DeleteCardForm(request.POST)
+                if delete_form.is_valid():
+                    card.delete()
+                    return redirect('home')
+            """
+    context = {
+        'card': card,
+        'edit_form': edit_form,
+        'delete_form': delete_form,
+        }
+    return render(request, 'blogapi/edit_card.html', context=context)
 
 
 def display_project_1(request):
@@ -131,10 +226,10 @@ def display_project_11(request):
     ordered_tickets_and_reviews = sorted(
         chain(tickets, reviews),
         key=lambda instance: instance.time_created, reverse=True)
-    """
+    
     # articles = models.Article.objects.all()
     # ordered_articles = chain(articles)
-    """
+
     paginator = Paginator(ordered_articles, 4)
     page = request.GET.get('page')
     page_post = paginator.get_page(page)

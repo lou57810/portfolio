@@ -1,26 +1,61 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
 
-<section class="py-5 bg-light">
-    <p>Tu es Page 1 flow</p>
-    <img class="img-fluid" alt="100%x280" src="{% static 'img1/header.png'' %}">
-    <img class="img-fluid" alt="100%x280" src="{% static 'img1/logo.png'' %}">
-    <div class="article">
-    <h4>Vous êtes analyste marketing chez Books Online, une importante librairie
-        en ligne spécialisée dans les livres d'occasion. Dans le cadre de vos fonctions,
-        vous essayez de suivre manuellement les prix des livres d'occasion sur les sites web de vos concurrents.
-        Cela représente trop de travail et vous n'arrivez pas à y faire face :
-        il y a trop de livres et trop de librairies en ligne !
+<div class="container">
+    <section class="py-5 bg-light">
+        <div="header">
+            <header_title>
+               <img class="img-fluid" alt="100%x280" src="{% static 'img1/logo3.png'' %}" id='logo'>
+               <h1>Utilisez les bases de Python pour l'analyse de Marché</h1>
+            </header_title>
+            <banner>
+                <img class="img-fluid" alt="100%x280" src="{% static 'img1/header.png'' %}">
+            </banner>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <h3>Objectifs du projet</h3><br>
+        <hr>
 
-Vous et votre équipe avez décidé d'automatiser cette tâche laborieuse via un programme (un scraper) développé en Python,
-        capable d'extraire les informations tarifaires d'autres librairies en ligne.</h4>
-        <p> L'objectif est de développer une version bêta de ce système pour suivre les prix des livres
-            chez Books to Scrape, un revendeur de livres en ligne.</p>
-<h3>Git:</h3>
-        <p>VCS: Version Control System</p>
-    </div>
-</section>
+            <p>Vous êtes analyste marketing chez Books Online, une importante librairie
+                en ligne spécialisée dans les livres d'occasion. Dans le cadre de vos fonctions,
+                vous essayez de suivre manuellement les prix des livres d'occasion sur les sites web de vos concurrents.
+                Cela représente trop de travail et vous n'arrivez pas à y faire face :
+                il y a trop de livres et trop de librairies en ligne !
+                Vous et votre équipe avez décidé d'automatiser cette tâche laborieuse via un programme (un scraper) développé en Python,
+                capable d'extraire les informations tarifaires d'autres librairies en ligne.</p>
+            <p> L'objectif est de développer une version bêta de ce système pour suivre les prix des livres
+                chez Books to Scrape, un revendeur de livres en ligne.</p>
+                
+            
+    </section>
+    <hr>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+    <p>Au Sommaire:</p>
+    <p>- Apprenez les bases du langage Python<br>
+    - Initiez vous à Python pour l'analyse de données<br>
+    - Apprenez à utiliser la ligne de commande dans un terminal<br>
+    - Mettez en place votre environnement Python<br>
+    - Prenez la parole en public<br>
+    - Gerez du code avec Git et Github<br>
+    </section>
+    <hr>
+</div>
+<div class="container">
+<h4>Apprenez les bases du langage Python</h4>
+<h4>Initiez vous à Python pour l'analyse de données</h4>
+<h4>Apprenez à utiliser la ligne de commande dans un terminal</h4>
+<h4>Mettez en place votre environnement Python</h4>
+<h4>Prenez la parole en public</h4>
+<h4>Gerez du code avec Git et Github</h4>
+
+
+</div>
 
 {% endblock content %}

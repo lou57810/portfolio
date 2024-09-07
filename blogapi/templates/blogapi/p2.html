@@ -2,24 +2,25 @@
 {% load static %}
 {% block content %}
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+<div class="container">
+    <section class="py-5 bg-light">
+        <p>Projet 2</p>
+        <div class="article">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img2/code_iguanas.png'' %}">
+        <p>Notre première étape est de bien définir les besoins client, avant de démarrer le développement logiciel. Tu devras livrer les éléments suivants  :
 
-<section class="py-5 bg-light">
-    <p>Projet 2</p>
-    <div class="article">
-        <img class="img-fluid" alt="100%x280" src="{% static 'img2/code_iguanas.png'' %}">
-    <p>Notre première étape est de bien définir les besoins client, avant de démarrer le développement logiciel. Tu devras livrer les éléments suivants  :
+        Un cahier des charges contenant :
+            Une liste des spécifications fonctionnelles, présentant ce que le produit va réaliser ;
+            Une veille technologique justifiant les choix technologiques retenus dans la spécification technique ;
+            Une liste des spécifications techniques, présentant les technologies utilisées et comment la technique répond aux besoins du client ;
+            Un diagramme de classes utilisant la nomenclature UML.
+        Un Backlog Produit qui contient toutes les tâches liées aux fonctionnalités et incluant :
+            Des user stories avec critère(s) d’acceptation ;
+            Les user stories doivent être priorisées ;
+            Une estimation en temps de réalisation.</p>
 
-    Un cahier des charges contenant :
-        Une liste des spécifications fonctionnelles, présentant ce que le produit va réaliser ;
-        Une veille technologique justifiant les choix technologiques retenus dans la spécification technique ;
-        Une liste des spécifications techniques, présentant les technologies utilisées et comment la technique répond aux besoins du client ;
-        Un diagramme de classes utilisant la nomenclature UML.
-    Un Backlog Produit qui contient toutes les tâches liées aux fonctionnalités et incluant :
-        Des user stories avec critère(s) d’acceptation ;
-        Les user stories doivent être priorisées ;
-        Une estimation en temps de réalisation.</p>
-
-    </div>
-</section>
+        </div>
+    </section>
+</div>
 
 {% endblock content %}

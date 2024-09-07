@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <section class="py-5 bg-light">
+        <h2>Modifier la carte- card.id </h2>
+        <div class="row mt-4">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                  <div class="post">
+                                      <h5 class="card-title">{{ card.title }}</h5>
+                                      <!--<img class="img-fluid" alt="100%x280" src="\{% static 'img_home/img14.jpg' %\}" >-->
+                                      <img class="card-img-top" alt="100%x280" src="{{ card.photo.image.url }}" >
+                                      <h5 class="card-title">{{ card.content }}</h5>
+                                    <p></p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+        
+        <form method="post">
+            {{ edit_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning mr-4">Sauvegarder</button>
+        </form>
+        <hr>
+        
+    </section>
+</div>
+{% endblock content %}

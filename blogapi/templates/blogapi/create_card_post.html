@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <div class="container">
+        <section class="py-5 bg-light">
+        <h2>Nouvelle carte</h2>
+            <form method="post" enctype="multipart/form-data">
+                {{ card_form.as_p }}
+                {{ photo_form.as_p }}
+                {% csrf_token %}
+                <button type="submit" >Publier</button>
+            </form>
+        </section>
+    </div>
+{% endblock content %}

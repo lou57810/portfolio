@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 dsn = os.getenv('dsn')
 
-
+"""
 sentry_sdk.init(
     # dsn="https://7b8fdb1a47491b415857d2e63a0c98b1@o4506869492940800.ingest.us.sentry.io/4507664861560832",
     # Set traces_sample_rate to 1.0 to capture 100%
@@ -19,7 +19,7 @@ sentry_sdk.init(
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
 )
-
+"""
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
