@@ -129,8 +129,49 @@ Au Menu:<br>
 - puiser dans l'inspiration<br>
 <hr>
 <h4>Gerez du code avec Git et Github</h4>
-
-
+<h5>Git est un gestionnaire de versions</h5>
+<p>C'est un programme qui permet aux développeurs de conserver un historique des modifications et des versions de tous leurs fichiers.<br>
+Cet outil a donc trois grandes fonctionnalités :<br>
+    - Revenir à une version précédente de votre code en cas de problème.<br>
+    - Suivre l’évolution de votre code étape par étape.<br>
+    - Travailler à plusieurs sans risquer de supprimer les modifications des autres collaborateurs.</p>
+<h5>Dépot distant</h5>
+<p>Création d'un compte sur Git Hub et paramètrages sécurités, et ajouter le new repository.</p>
+<h5>Dépot local</h5>
+<p>Télécharger et installer Git en local.<br>
+Puis configurer Git:</p>
+<p><img src="{% static 'img1/git1.png' %}" alt="git1" width="30%"></p>
+<p>Principe de fonctionnement:<br>
+<p><img src="{% static 'img1/git2.png' %}" alt="git2" width="30%"></p>
+<p>Le Working directory<br>
+Cette zone correspond au dossier du projet sur votre ordinateur.<br>
+<p>Le Stage ou index<br>
+Cette zone est un intermédiaire entre le working directory et le repository.<br>
+Elle représente tous les fichiers modifiés que vous souhaitez voir apparaître dans votre prochaine version de code.</p>
+<p>Le Repository<br>
+Lorsque l’on crée de nouvelles versions d’un projet, elles sont stockées dans le repository.<br>
+Avant de faire un push sur Git hub, il est indispensable de créer un fichier '.gitignore'<br>
+dans lequel nous ajouterons les fichiers que nous ne voulons pas envoyer.<br>
+Puis créer le lien avec Git Hub après avoir initialisé les clés (SSH, HTTPS, GPG)<br>
+En remplaçant votre nom Git et nom Projet.<br>
+<p><img src="{% static 'img1/git3.png' %}" alt="git3" width="50%"><br>
+<img src="{% static 'img1/git4.png' %}" alt="git4" width="15%"><br>
+<img src="{% static 'img1/git5.png' %}" alt="git5" width="18%"><br>
+Enfin pusher les fichiers en 3 étapes:<br>
+- git add .<br>
+- git commit -m "commentaire"<br>
+- git push<br>
+Le commentaire est important pour retrouver facilement l'évolution des dépots.<br>
+<p>L'intérêt de Git est également de créer plusieurs branches'</p>
+<p>- git branch nouvelle branche<br>
+- git checkout nouvelle branche(ex: develop)<br>
+Le code peut continuer à évoluer dans la nouvelle branche, puis être 'mergé' dans une autre branche<br>
+Ex: 'git checkout branche main'<br>
+'git merge develop'</p>
+<p>Il est également possible de rapatrier et travailler sur un projet Git avec la commande fork.<br>
+Le développment local peut alors progresser et mis à soumissions sur le projet original avec<br>
+une 'pull request' effectué depuis Git hub.</p>
+<p>Bien d'autres commandes peuvent aussi être réalisées avec Git comme des corrections en local ou distant.</p>
 </div>
 
 {% endblock content %}
