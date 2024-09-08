@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 
 import blogapi.views
 
-urlpatterns = [    
+urlpatterns = [
     path('', blogapi.views.home, name='home'),
     path('blogapi/create_card_post', blogapi.views.card_and_photo_upload, name='create-card-post'),
     path('blogapi/photo_upload/', blogapi.views.card_and_photo_upload, name='photo-upload'),

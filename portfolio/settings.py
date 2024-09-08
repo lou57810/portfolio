@@ -1,5 +1,5 @@
 import os
-import sentry_sdk
+# import sentry_sdk
 from pathlib import Path
 from dotenv import load_dotenv
 

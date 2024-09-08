@@ -45,7 +45,8 @@ def delete_memento(request, id_item):
     # messages.success(request, "Memento supprimé.")
     return redirect('../memento')
 
-# ALBUM PHOTO 
+
+# ALBUM PHOTO
 @login_required
 def album_photos(request):
     # photos = models.Card.objects.all()
@@ -67,24 +68,10 @@ def photo_upload(request):
             # now we can save
             photo.save()
             return redirect('home')
-    photos = models.Photo.objects.all()
+    # photos = models.Photo.objects.all()
     return render(request, 'blogapi/photo_upload.html', context={'form': form})
 
 
-"""
-def photo_delete(request, id):
-    photo = Photos.objects.get(id=id)  # nécessaire pour GET et pour POST
-
-    if request.method == 'POST':
-        # supprimer le groupe de la base de données
-        photo.delete()
-        # rediriger vers la liste des groupes
-        return redirect('photo-upload')
-
-    return render(request,
-                    'blogapi/photo_delete.html',
-                    {'photo': photo})
-"""
 def delete_card(request, card_id):
     print('card_id:', card_id)
     card = get_object_or_404(models.Card, id=card_id)
@@ -97,7 +84,7 @@ def delete_card(request, card_id):
             if delete_form.is_valid():
                 card.delete()
                 return redirect('album-photos')
-    context = {'delete_form': delete_form,}
+    context = {'delete_form': delete_form, }
     return render(request, 'blogapi/delete_card.html', context=context)
 
 
@@ -226,7 +213,7 @@ def display_project_11(request):
     ordered_tickets_and_reviews = sorted(
         chain(tickets, reviews),
         key=lambda instance: instance.time_created, reverse=True)
-    
+
     # articles = models.Article.objects.all()
     # ordered_articles = chain(articles)
 
