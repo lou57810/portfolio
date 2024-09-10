@@ -7,16 +7,15 @@
     <div class="container">
         <div class="row gy-4 align-items-center">
             <div class="col-12 col-md-6">
-                <h1>Memento</h1>
-                {% if item_form.instance.id %}
-
-                <form method="POST" action="{% url 'memento_create' id_item=item_form.instance.id %}">
+                <h1>Todo</h1>
+                {% if todo_form.instance.id %}
+                <form method="POST" action="{% url 'todo-create' id_item=todo_form.instance.id %}">
 
                 {% else %}
-                    <form method="POST" action="{% url 'memento_create' %}">
+                    <form method="POST" action="{% url 'todo-create' %}">
 
                 {% endif %}
-                    {{ item_form.as_p }}
+                    {{ todo_form.as_p }}
                     {% csrf_token %}
 
                     <button type="submit" >Publier</button>

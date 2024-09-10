@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-<!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
-
 <section class="py-5 bg-light">
+    <div class="container">    
+
+    <section class="py-5">
     <div class="container">
-        <div class="article">
-            <h2>Todo:</h2>
-            <h4> - Révision cours</h4>
-            <h4> - Markdown</h4>
-            <h4> - Projet13 args</h4>
-            <h4> - parametrage admin</h4>
-            <h4> - sécuriser avec .env, settings.py</h4>
-            <h4> - Mettre en place des liens sur articles vs/path('article/\<\int:article_id>', views.article, name='article')</h4>
-            <h4> - Remember me Forgot Password à implémenter dans login page. https://djangopackages.org/</h4>
-        </div>
+        <a href="{% url 'todo-create' %}"><button type="button" class="btn btn-success">Ajout Todo</button></a>
+    </div><br>
+    <div class="container">
+        {% for item in todo_items %}
+            <li>
+                <span  style="display:inline-block; width:150px;" > {{ item.TODO }} :</span>
+                <a href="{% url 'todo-create' id_item=item.id %}"><button type="button" class="btn btn-warning">Modifier</button></a> &emsp;
+                <a href="{% url 'todo-delete' id_item=item.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+            </li><br>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="container">
+        <a href="{% url 'todo-create' %}"><button type="button" class="btn btn-success">Ajout Todo</button></a>
     </div>
 </section>
+
 
 {% endblock content %}

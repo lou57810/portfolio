@@ -29,8 +29,26 @@
                     </a>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="{% url 'home' %}" class="nav-link text-light px-3">Home</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-light px-3" href="#" data-bs-toggle="dropdown">Projets</a>
+                                <!--<a href="\{% url 'home' %\}" class="nav-link text-light px-3">Projets</a>-->
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'p1' %}">Projet1</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p2' %}">Projet2</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p3' %}">Projet3</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p4' %}">Projet4</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p5' %}">Projet5</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p6' %}">Projet6</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p7' %}">Projet7</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p8' %}">Projet8</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p9' %}">Projet9</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p10' %}">Projet10</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p11' %}">Projet11</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p12' %}">Projet12</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p13' %}">Projet13</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p14' %}">Projet14</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p15' %}">Projet15</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#contact" class="nav-link text-light px-3">Contact</a>

@@ -51,3 +51,7 @@ class Article(models.Model):
 class MementoItems(models.Model):
     item_name = models.CharField(max_length=256)
     item_explanation = models.CharField(max_length=1024, verbose_name='item_explanation')
+
+
+class TodoItems(models.Model):
+    TODO = models.CharField(max_length=1024)

@@ -33,3 +33,10 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = models.Article
         fields = ['title', 'description', 'user', 'image']
+
+
+# TODO
+class TodoForm(forms.ModelForm):
+    class Meta:
+        model = models.TodoItems
+        fields = ['TODO',]

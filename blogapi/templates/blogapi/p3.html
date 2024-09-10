@@ -2,13 +2,18 @@
 {% load static %}
 {% block content %}
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
-<div class="container">
-    <section class="py-5 bg-light">        
-        <div class="article">
-        <img class="img-fluid" alt="100%x280" src="{% static 'img3/logo.png'' %}">
 
+</div><div class="container">
+    <section class="py-5 bg-light">
+        <div class="header">
+            <header_title>
+               <img class="img-fluid" alt="100%x280" src="{% static 'img3/logo.png' %}" id='logo'>
+               <h1>Designez une application Python adaptee aux besoins d'un client</h1>
+            </header_title><br><br>
+            <banner>
+                <img class="img-fluid" alt="100%x280" src="{% static 'img3/web3.jpg' %}">
+            </banner>
         </div>
     </section>
 </div>
-
 {% endblock content %}

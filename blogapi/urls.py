@@ -28,8 +28,13 @@ urlpatterns = [
     path('blogapi/p10/', blogapi.views.display_project_10, name='p10'),
     path('blogapi/p11/', blogapi.views.display_project_11, name='p11'),
     path('blogapi/p12/', blogapi.views.display_project_12, name='p12'),
-    path('blogapi/todo/', blogapi.views.display_todo, name='todo'),
-    path('blogapi/create_article/', blogapi.views.create_article, name='create-article'),
+    path('blogapi/p12/', blogapi.views.display_project_13, name='p13'),
+    path('blogapi/p12/', blogapi.views.display_project_14, name='p14'),
+    path('blogapi/p12/', blogapi.views.display_project_15, name='p15'),
+    path('blogapi/todo/', blogapi.views.todo_display, name='todo-display'),
+    path('blogapi/add_todo/', blogapi.views.todo_create, name='todo-create'),
+    path('blogapi/add_todo/<int:id_item>', blogapi.views.todo_create, name='todo-create'),
+    path('blogapi/todo_delete/<int:id_item>', blogapi.views.todo_delete, name='todo-delete'),
     ]
 
 if settings.DEBUG:

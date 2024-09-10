@@ -1,12 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-# from itertools import chain
-# from django.forms import formset_factory
-from django.contrib.auth.decorators import login_required  # , permission_required
-# from django.db.models import Q
-# from django.views.generic import View
+from django.contrib.auth.decorators import login_required
+
 from . import forms, models
 
-# Create your views here.
 
 
 def home(request):
@@ -197,7 +193,23 @@ def display_project_10(request):
 
 
 def display_project_11(request):
-    # articles = models.Article.objects.all()
+    return render(request, 'blogapi/p11.html') 
+
+
+def display_project_12(request):
+    return render(request, 'blogapi/p12.html')
+
+
+def display_project_13(request):
+    return render(request, 'blogapi/p13.html')
+
+
+def display_project_14(request):
+    return render(request, 'blogapi/p14.html')
+
+
+def display_project_15(request):
+    return render(request, 'blogapi/p15.html')
 
     """
     followed_users_list = []
@@ -220,31 +232,37 @@ def display_project_11(request):
     paginator = Paginator(ordered_articles, 4)
     page = request.GET.get('page')
     page_post = paginator.get_page(page)
-    """
     return render(request, 'blogapi/p11.html')  # context={'page_post': page_post})
+    """
+    
 
+@login_required
+def todo_display(request):
+    todo_items = models.TodoItems.objects.all().order_by('TODO')
+    todo_form = forms.TodoForm()
 
-def display_project_12(request):
-    # articles = models.Article.objects.all()
-    return render(request, 'blogapi/p12.html')
+    context = {'todo_form': todo_form, 'todo_items': todo_items}
+    return render(request, 'blogapi/todo.html', context=context)
 
 
 @login_required
-def display_todo(request):
-    # articles = models.Article.objects.all()
-    return render(request, 'blogapi/todo.html')
-
-
-@login_required
-def create_article(request):
+def todo_create(request, id_item=None):
+    instance_item = models.TodoItems.objects.get(pk=id_item) if id_item is not None else None
+    
     if request.method == "GET":
-        article_form = forms.ArticleForm()
-        return render(request, 'blogapi/create_article.html', context={'article_form': article_form})
+        todo_form = forms.TodoForm(instance=instance_item)
+        context={'todo_form': todo_form}
+        return render(request, 'blogapi/add_todo.html', context=context)
 
     if request.method == "POST":
-        article_form = forms.ArticleForm(request.POST, request.FILES)
-        if article_form.is_valid():
-            new_article = article_form.save(commit=False)
-            new_article.user = request.user
-            new_article.save()
-            return redirect('home')
+        todo_form = forms.TodoForm(request.POST, instance=instance_item)
+        if todo_form.is_valid():
+            todo_form.save()
+            return redirect('../todo')
+
+
+@login_required
+def todo_delete(request, id_item):
+    todo = get_object_or_404(models.TodoItems, pk=id_item)
+    todo.delete()
+    return redirect('../todo')
