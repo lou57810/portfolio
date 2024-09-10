@@ -143,52 +143,42 @@ def edit_card(request, card_id):
 
 
 def display_project_1(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p1.html')
 
 
 def display_project_2(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p2.html')
 
 
 def display_project_3(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p3.html')
 
 
 def display_project_4(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p4.html')
 
 
-def display_project_5(request):
-    # articles = models.Article.objects.all()
+def display_project_5(request): 
     return render(request, 'blogapi/p5.html')
 
 
 def display_project_6(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p6.html')
 
 
-def display_project_7(request):
-    # articles = models.Article.objects.all()
+def display_project_7(request): 
     return render(request, 'blogapi/p7.html')
 
 
 def display_project_8(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p8.html')
 
 
 def display_project_9(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p9.html')
 
 
 def display_project_10(request):
-    # articles = models.Article.objects.all()
     return render(request, 'blogapi/p10.html')
 
 
@@ -211,30 +201,10 @@ def display_project_14(request):
 def display_project_15(request):
     return render(request, 'blogapi/p15.html')
 
-    """
-    followed_users_list = []
-    for user in UserFollows.objects.filter(user=request.user):
-        followed_users_list.append(user.followed_user)
 
-    reviews = Review.objects.filter(
-        Q(user=request.user) | Q(user__in=followed_users_list))
+def display_project_15(request):
+    return render(request, 'blogapi/p16.html')
 
-    tickets = Ticket.objects.filter(
-            Q(user=request.user) | Q(user__in=followed_users_list)).exclude(review__in=reviews)
-
-    ordered_tickets_and_reviews = sorted(
-        chain(tickets, reviews),
-        key=lambda instance: instance.time_created, reverse=True)
-
-    # articles = models.Article.objects.all()
-    # ordered_articles = chain(articles)
-
-    paginator = Paginator(ordered_articles, 4)
-    page = request.GET.get('page')
-    page_post = paginator.get_page(page)
-    return render(request, 'blogapi/p11.html')  # context={'page_post': page_post})
-    """
-    
 
 @login_required
 def todo_display(request):
