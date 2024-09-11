@@ -37,7 +37,7 @@ class Subscriber(AbstractBaseUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    profile_photo = models.ImageField(null=True, blank=True, upload_to="images/")
+    profile_photo = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.email
