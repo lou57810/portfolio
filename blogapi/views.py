@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from . import forms, models
 
 
-
 def home(request):
     photos = models.Photo.objects.all()
     return render(request, 'blogapi/home.html', context={'photos': photos})
@@ -158,7 +157,7 @@ def display_project_4(request):
     return render(request, 'blogapi/p4.html')
 
 
-def display_project_5(request): 
+def display_project_5(request):
     return render(request, 'blogapi/p5.html')
 
 
@@ -166,7 +165,7 @@ def display_project_6(request):
     return render(request, 'blogapi/p6.html')
 
 
-def display_project_7(request): 
+def display_project_7(request):
     return render(request, 'blogapi/p7.html')
 
 
@@ -183,7 +182,7 @@ def display_project_10(request):
 
 
 def display_project_11(request):
-    return render(request, 'blogapi/p11.html') 
+    return render(request, 'blogapi/p11.html')
 
 
 def display_project_12(request):
@@ -202,7 +201,7 @@ def display_project_15(request):
     return render(request, 'blogapi/p15.html')
 
 
-def display_project_15(request):
+def display_project_16(request):
     return render(request, 'blogapi/p16.html')
 
 
@@ -218,10 +217,10 @@ def todo_display(request):
 @login_required
 def todo_create(request, id_item=None):
     instance_item = models.TodoItems.objects.get(pk=id_item) if id_item is not None else None
-    
+
     if request.method == "GET":
         todo_form = forms.TodoForm(instance=instance_item)
-        context={'todo_form': todo_form}
+        context = {'todo_form': todo_form}
         return render(request, 'blogapi/add_todo.html', context=context)
 
     if request.method == "POST":
