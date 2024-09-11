@@ -20,7 +20,6 @@ RUN python manage.py collectstatic --noinput
 
 ADD portfolio.sqlite3 /app
 
-
 EXPOSE 8000
 
 # runs the production server
