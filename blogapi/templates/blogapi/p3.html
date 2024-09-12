@@ -5,10 +5,10 @@
 <div class="container">
     <section class="py-5 bg-light">
         <div class="header">
-            <header_title>
+            <div class="header_title">
                <img class="img-fluid" alt="100%x280" src="{% static 'img3/logo.png' %}" id='logo'>
-               <h1>D�veloppez un programme logiciel en Python</h1>
-            </header_title><br><br>
+               <h1>Développez un programme logiciel en Python</h1>
+            </div><br><br>
             <banner>
                 <img class="img-fluid" alt="100%x280" src="{% static 'img3/banner3.png' %}">
             </banner>
@@ -17,10 +17,83 @@
 </div>
 <div class="container">
     <section class="py-5 bg-light">
-    <p>Essai sur la creation d'un logiciel fonctionnant hors ligne et destine a la gestion de tournois d'echecs</p>
+    <h3>Essai sur la création d'un logiciel fonctionnant hors ligne et destiné à la gestion de tournois d'échecs</h3>
 
     </section>
 </div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <h4>Python: Programmation Orientée Objet</h4>
+        <h5>Les classes:</h5>
+        <p>Les classes sont des conteneurs,à l'intérieur desquels nous pouvons définir des attributs,<br>
+        ainsi que des méthodes pouvant modifier ces attributs.<br>
+        Ces classes permettent alors de créer des objets, possédant ces attributs et ces méthodes.<br>
+        Il est alors possible d'instancier plusieurs objets ayant leurs attributs propres,<br>
+        et des méthodes à leur disposition exclusives.</p>
+        <p>Pour résumer de façon imagée, une classe est une sorte de modèle ou recette permettant de créer un objet,<br>
+        qui pourrai être un personnage, un véhicule, ou un plat cuisiné.</p>
+        <p>La POO complémente la programmation procédurale en y ajoutant une couche d'abstraction.</p>
+        <p>L'exercice proposé dans ce projet consiste à: <br>
+        - Créer des classes qui nous serviront de modèles pour le tournoi, les joueurs, les matchs et les rondes.<br>
+        - Utiliser des views pour afficher les classements et autres appariements.<br>
+        - Implémenter des contrôleurs pour accepter les données de l'utilisateur,<br>
+            produire les résultats des matchs, lancer de nouveaux tournois, etc. </p>
+    </section>
+    <section class="py-5 bg-light">
+        <h5>Illustration de la structure MVC(pattern MVC)</h5>
+        <img src="{% static 'img3/mvc_model.png' %}" alt="Photo Info" >
 
+        <h5>La classe Player(model),</h5>
+        <img src="{% static 'img3/class_player.png' %}" alt="Photo Info" >
+        <h5>La classe MainMenu(view),</h5>
+        <img src="{% static 'img3/class_menu.png' %}" alt="Photo Info" >
+        <h5>La classe RoundController(controller),</h5>
+        <img src="{% static 'img3/class_control.png' %}" alt="Photo Info" >
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <h4>Code Python conforme à la PEP8</h4>
+        <p>Commenter le code pour une meilleure compréhension en relecture pour un autre programmeur ou soi-même.<br>
+        Les docstrings permettent de bien documenter le code.<br>
+        La PEP8 introduit des conditions de nommage qui permettent de distinguer les éléments du code<br>
+        comme les variables, les classes, les fonctions, les modules, etc....<br>
+        Flake8 signalera également une mauvaise indentation, les 'blank lines', les espaces, la longueur des lignes.</p>
+        <p>Respecter le concept 'SOLID'<br>
+        - S désigne la responsabilité unique (Single responsibility : Chaque classe ou fonction<br>
+        doit faire une seule chose, et la faire bien).<br>
+        - O désigne le principe ouvert/fermé (Open/Closed: Les classes doivent être ouvertes à l’extension,<br>
+        mais fermées à la modification).<br>
+        - L désigne la substitution de Liskov (Les sous-classes doivent pouvoir faire tout ce que font<br>
+        leurs classes parentes).<br>
+        - I désigne la ségrégation des interfaces (Interfaces Segregation: Cela correspond essentiellement<br>
+        au principe de responsabilité unique, appliqué aux interfaces.)<br>
+        - D désigne l'inversion des dépendances (Dependance Inversion: Les classes parentes<br>
+        ne doivent pas avoir à changer lorsque l’une de leurs sous-classes est modifiée).
+        </p>
+        <h5>Utiliser un linter</h5>
+        <p>En console avec la commande 'flake8' ou en version page html,<br>
+        'flake8 --format=html --htmldir=flake-report', flake8 permet la vérification<br>
+        de la conformité du code à la PEP8</p>
+        <img src="{% static 'img3/flake8.png' %}" alt="Photo Info" >
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <h4>Aller plus loin avec Git</h4>
+        <img src="{% static 'img3/git_fork.png' %}" alt="Photo Info" >
+        <p>Le plan d’attaque est le suivant :<br>
+        - Modifier en local un fichier.<br>
+        - Faire un git add, un git commit (avec le numéro de l’issue dans le message, cf. les règles de contribution),<br>
+        et un git push pour envoyer la modification sur notre repository distant (le fork).<br>
+        - Créer une pull request via l’interface graphique de GitHub.<br>
+        - Comme le précisent les règles de contribution, votre pull request sera ensuite revue et traitée.</p>
+        <p>- Résolution des conflits.<br>
+        - Correction de l'historique au fil des développements.<br>
+        - Structurer la collaboration avec GitFlow.<br>
+        - Automatisation des traitements grâce aux hooks.<br>
+        </p>
+    </section>
+</div>
 
 {% endblock content %}
