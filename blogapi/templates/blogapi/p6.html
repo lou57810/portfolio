@@ -2,17 +2,113 @@
 {% load static %}
 {% block content %}
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+
 <div class="container">
     <section class="py-5 bg-light">
         <img class="img-fluid" alt="100%x280" src="{% static 'img6/logo.png'' %}">
-        <p>Tu es Page 6 flow</p>
+        <h1>Un algorithme est une suite d'instructions à suivre pour résoudre un problème.</h1><br>
+        <hr><br>
+
         <div class="article">
-        <h2>Vous venez de rejoindre AlgoInvest&Trade, une société financière spécialisée dans l'investissement.
-            La société cherche à optimiser ses stratégies d'investissement à l'aide d'algorithmes,
-            afin de dégager davantage de bénéfices pour ses clients.</h2>
+        <h3>Les algorithmes prennent l'entrée et exécutent l’ensemble des instructions avec cette information<br>
+            pour générer une sortie.<br>
+            Un programme est essentiellement créé à l'aide d’un ensemble d'algorithmes.</h3>
 
         </div>
     </section>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <h1>Structures de données</h1>
+        <hr>
+        <h4>- Tableaux,<br>
+            - Listes chaînées,<br>
+            - Dictionnaires<br>
+            - Piles et files<br>
+            - Arbres binaires et graphs.</h4>
+        <hr>
+        <div class="article">
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <h2>Tableaux</h2>
+        <hr><br>
+        <div class="article">
+            <p>Un tableau est une structure qui permet de mémoriser plusieurs données de type semblable ou différent.</p>
+            <p>D’une part, il est très facile de lire ou de modifier une donnée d’un tableau grâce à son index.<br>
+                Chaque donnée ayant un numéro, il vous suffit de le connaître, et le tour est joué.<br>
+                D’autre part, dans plusieurs langages, la taille d’un tableau est fixe.<br>
+                Autrement dit, vous ne pouvez pas ajouter ou supprimer les données d’un tableau.<br>
+                Il vous faut en faire une copie intégrant vos ajouts ou vos suppressions.<br>
+                Ce n’est pas très pratique si vous devez changer fréquemment la taille de ce tableau.<br>
+                Dans ce cas, vous préférerez d’autres structures de données, telles que les listes chaînées.</p>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <h2>Listes chaînées</h2>
+        <hr><br>
+        <div class="article">
+            <p>Une liste chaînée (singly-linked list, en anglais) est un ensemble de valeurs enregistrées<br>
+            dans des endroits différents de la mémoire.<br>
+            À la différence d’un tableau qui contient un nombre fixe d’éléments, la liste chaînée est très souple :<br>
+            vous pouvez ajouter ou supprimer des éléments à votre guise.<br>
+            Ainsi, une liste chaînée est une structure de données linéaire qui comprend une série de nœuds connectés.<br>
+            Ici, chaque nœud stocke les données et l'adresse du nœud suivant ;<br>
+            le dernier élément de la liste aura une adresse vide.</p>
+        </div>
+        <img class="mx-auto d-block" alt="100%x280" src="{% static 'img6/ls_chain.png' %}"><br>
+    </section>
+    <div class="article">
+        <p>Une liste chaînée (singly-linked list, en anglais) est un ensemble de valeurs enregistrées<br>
+            dans des endroits différents de la mémoire. À la différence d’un tableau<br>
+            qui contient un nombre fixe d’éléments, la liste chaînée est très souple :<br>
+            vous pouvez ajouter ou supprimer des éléments à votre guise.<br>
+            Ainsi, une liste chaînée est une structure de données linéaire qui comprend une série de nœuds connectés.<br>
+            Ici, chaque nœud stocke les données et l'adresse du nœud suivant ;<br>
+            le dernier élément de la liste aura une adresse vide.</p>
+    </div>
+    <div class="article">
+        <p>Avantages et inconvénients:<br>
+            Dans une liste chaînée, vous pouvez facilement ajouter un élément en début de liste<br>
+            et ensuite ajouter de nouveaux éléments en queue de liste. Mais c’est un peu plus compliqué,<br>
+            car il vous faut parcourir toute la liste avant de trouver un nœud dont l’adresse est vide.<br>
+            Concernant la recherche d’un élément, vous allez devoir parcourir la liste<br>
+            du début à la fin jusqu’à le trouver.</p>
+        <p>Avantages et inconvénients:<br>
+            Parfois, vous êtes amené à associer deux éléments ensemble, mais actuellement,<br>
+            vous ne pouvez pas simplement associer un index et un élément avec les listes chaînées.<br>
+            Les tables de hachage vont vous permettre d’associer deux éléments de type quelconque.<br>
+            On parlera alors ici de l’association d’une clé et d’une valeur.</p>
+        <p>Tables de hachage: <br>
+            Une table de hachage est une structure de données qui vous permet d’associer une valeur<br>
+            à une clé et non plus à un indice. Cette clé peut être un mot ou un chiffre.</p>
+    </div>
+    <div class="article">
+        <p>Les tables de hachage ne comportent pas d’ordre. Contrairement aux tableaux,<br>
+            vous ne pouvez pas retrouver un élément via sa position, mais uniquement via sa clé.</p>
+    </div>
+    <div class="article">
+        <p>Les tables de hachage ne comportent pas d’ordre. Contrairement aux tableaux,<br>
+            vous ne pouvez pas retrouver un élément via sa position, mais uniquement via sa clé.</p>
+    </div>
+    <div class="article">
+        <p>Piles</p>
+        <p>LIFO: "Last In First Out</p>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil1.png'' %}">
+    </div>
+
+    <div class="article">
+        <p>Piles</p>
+        <p>FiFO: "Firs In First Out</p>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil2.png'' %}">
+    </div>
 </div>
 
 {% endblock content %}

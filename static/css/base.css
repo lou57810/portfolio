@@ -75,3 +75,13 @@ main .signup_container .wrapper {
     border-radius: 20px;
     backdrop-filter: blur;
 }
+
+section {
+
+}
+
+img_center {
+    margin-left: auto;
+    margin-right: auto;
+
+}
