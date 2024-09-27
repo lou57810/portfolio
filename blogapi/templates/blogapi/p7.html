@@ -2,15 +2,85 @@
 {% load static %}
 {% block content %}
 <!--link rel="stylesheet" href="{% static 'flow.css' %}">-->
+
 <div class="container">
     <section class="py-5 bg-light">
-        <p>Tu es Page 7 flow</p>
+        <div class="header">
+            <div class="header_title">
+               <img class="img-fluid" alt="100%x280" src="{% static 'img7/logo_u.png'' %}" id="logo"><br><br>
+               <h1>LitRevu</h1>
+               <h2>Développez une application Web en utilisant Django</h2>
+            </div><br><br>
+            <div class="banner">
+                <img class="img-fluid" alt="100%x280" src="{% static 'img7/bib.jpg' %}">
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
         <div class="article">
-            <img class="img-fluid" alt="100%x280" src="{% static 'img7/banner.png'' %}">
-        <h2>Après un entretien réussi, vous décrochez le poste de Lead Développeur Python pour la jeune start-up LITRevu.
-            Son objectif est de commercialiser un produit permettant à une communauté d'utilisateurs
-            de publier des critiques de livres
-            ou d’articles et de consulter ou de solliciter une critique de livres à la demande.</h2>
+            <h3>La Mission</h3><br>
+            L’application permet de:
+                <ul>
+                    <li>demander des critiques de livres ou d’articles, en créant un billet.</li>
+                    <li>lire des critiques de livres ou d'articles.</li>
+                    <li>publier des critiques de livres ou d'articles.</li>
+                </ul>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h3>Django-Installation</h3><br>
+            <h4>Rappel: Création d'un environnement virtuel avec Python</h4>
+            <p>La commande `python -m venv env` crée l'environnement, et la commande suivante:<br>
+            `source env/Scripts/activate` permet de placer l'application python dans cet environnement.<br>
+            Nous pouvons dès lors installer les packages avec la commande `pip install \'packages\'`<br>
+            En particulier ici, nous allons installer le package Django.</p>
+            <p>Si l'on dispose d'un fichier requirements.txt, nous pouvons intaller tous les packages nécéssaires<br>
+            avec la commande `pip install -r requirements.txt`</p>
+
+            <h3>Django-Création d'une application:</h3><br>
+            <p>Django va permettre de créer un projet structuré selon le gabarit MVT.</p>
+            <ul>
+                <li>La commande `django-admin startproject mon_projet .` crée un répertoire mon_projet ainsi qu'un<br>
+                    fichier manage.py. Dans le répertoire 'mon_projet', Django a créé différents fichiers facilitant<br>
+                    l'initialisation du projet et le navigateur peut démarrer sur l'adresse: http://127.0.0.1:8000/<br>
+                    qui nous affiche alors la page d'accueil de Django.
+                </li>
+                <li>Nous pouvons maintenant créer une ou des applications pour le projet avec la commande:<br>
+                    `python manage.py startapp mon_app` et par exemple pour mieux cerner ou caractèriser<br>
+                    l'authentification et les droits utilisateurs: `python manage.py startapp authentication`.
+                </li>
+                <li>Il est nécéssaire d'ajouter ces applications dans le fichier settings.py à la liste<br>
+                    INSTALLED_APPS = [...,'mon_app', 'authentication',...]. Nous disposons maintenant d'une<br>
+                    application 'mon_app' avec dans son répertoire les fichiers admin.py, apps.py, models.py, views.py,<br>
+                    tests.py ainsi qu'un répertoire 'migrations'.
+                </li>
+
+                <li>Ce répertoire conserve toutes les migrations que nous effectuons lors de l'implémentation des modèles.<br>
+                    Il nous faut donc au préalable créer les modèles. Dans cet execice nous disposons d'un diagramme UML.<br><br>
+                    <img class="img-fluid" alt="100%x280" src="{% static 'img7/uml.png' %}"><br><br>
+                    Nous devons être attentif aux relations entre ces modèles:<br>
+                    Relation un à un, un à plusieurs, plusieurs à plusieurs, en utilisant les clés étrangères (Foreign keys)).
+                </li>
+                <li>Nous pouvons maintenant lancer les commandes:<br>
+                    `python manage.py makemigrations`, puis `python mange.py migrate`.<br>
+                    Avec la commande  `python manage.py runserver`, nous avons accès à notre site http://127.0.0.1:8000/<br>
+                    sur notre nagigateur.
+                </li>
+                <li>Puis, à l'adresse: http://127.0.0.1:8000/admin<br>
+                    Il est souhaitable en tant qu'administrateur de ce projet, que l'on puisse se connecter à la section<br>
+                    'admin' de l'application. Pour celà, nous devons lancer la commande:<br>
+                    `python manage.py createsuperuser`(Avec Git bash, nous devons faire précèder cette commande de `winpty`.)<br>
+                    `winpty python.py createsuperuser`. Puis, à l'adresse: http://127.0.0.1:8000/admin,<br>
+                    nous avons accès à l'interface d'administration du site.
+                </li>
+            </ul>
 
         </div>
     </section>

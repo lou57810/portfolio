@@ -12,6 +12,7 @@
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
         <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
@@ -20,20 +21,24 @@
         <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
 
     </head>
-    <!-- --------------------- Fin en-tête --------------------- -->
+    <!-- --------------------- Fin en-tête ----------------------->
     <body class='snippet-body'>
         <header class="py-4">
-            <nav class="navbar navbar-expand-xxl fixed-top navbar-light bg-dark">
+            <nav class="navbar navbar-expand-xxl fixed-top navbar-dark bg-dark">
                 <div class="container">
-                    <a class="navbar-brand text-white fs-2" href="{% url 'home' %}">
-                        <span >Portfolio</span>
-                    </a>
+                    <a class="navbar-brand text-white fs-2" href="{% url 'home' %}"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <!--<div class='collapse navbar-collapse' id='navbarSupportedContent'>-->
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav dropdown">
+                            <li class="nav-item dropdown">
+                                <a href="{% url 'home' %}" class="nav-link text-light px-3">Accueil Bernard Oswald</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-light px-3" href="#" data-bs-toggle="dropdown">Projets</a>
-                                <!--<a href="\{% url 'home' %\}" class="nav-link text-light px-3">Projets</a>-->
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li><a class="dropdown-item" href="{% url 'p1' %}">Projet1</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p2' %}">Projet2</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p3' %}">Projet3</a></li>
@@ -49,9 +54,10 @@
                                     <li><a class="dropdown-item" href="{% url 'p13' %}">Projet13</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p14' %}">Projet14</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p15' %}">Projet15</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p15' %}">Projet16</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item dropdown">
                                 <a href="#contact" class="nav-link text-light px-3">Contact</a>
                             </li>
                             <li class="nav-item">
@@ -102,9 +108,9 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
 
-                        <span class="navbar-toggler-icon">
-                        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-                        </span>
+                            <span class="navbar-toggler-icon">
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                            </span>
                         </button>
                     </div>
                 </div>

@@ -5,15 +5,25 @@
 
 <div class="container">
     <section class="py-5 bg-light">
-        <img class="img-fluid" alt="100%x280" src="{% static 'img6/logo.png'' %}">
-        <h1>Un algorithme est une suite d'instructions à suivre pour résoudre un problème.</h1><br>
+        <div class="header">
+            <div class="header_title">
+                <img class="img-fluid" alt="100%x280" src="{% static 'img6/logo.png'' %}"><br><br>
+                <h1>AlgoInvest&Trade</h1><br>
+                <h2>Resoudre des problèmes en utilisant des algorithmes en Python</h2>
+            </div><br><br>
+            <div class="banner">
+                <img class="img-fluid" alt="100%x280" src="{% static 'img6/u_banner.jpg'' %}">
+            </div>
+        </div>
+
         <hr><br>
 
         <div class="article">
-        <h3>Les algorithmes prennent l'entrée et exécutent l’ensemble des instructions avec cette information<br>
-            pour générer une sortie.<br>
-            Un programme est essentiellement créé à l'aide d’un ensemble d'algorithmes.</h3>
-
+            <h2>Définition</h2>
+            <h4>Un algorithme est une suite d'instructions à suivre pour résoudre un problème.</h4>
+            <h5>Les algorithmes prennent l'entrée et exécutent l’ensemble des instructions avec cette information<br>
+                pour générer une sortie.<br>
+                Un programme est essentiellement créé à l'aide d’un ensemble d'algorithmes.</h5>
         </div>
     </section>
 </div>
@@ -42,10 +52,10 @@
             <p>D’une part, il est très facile de lire ou de modifier une donnée d’un tableau grâce à son index.<br>
                 Chaque donnée ayant un numéro, il vous suffit de le connaître, et le tour est joué.<br>
                 D’autre part, dans plusieurs langages, la taille d’un tableau est fixe.<br>
-                Autrement dit, vous ne pouvez pas ajouter ou supprimer les données d’un tableau.<br>
-                Il vous faut en faire une copie intégrant vos ajouts ou vos suppressions.<br>
-                Ce n’est pas très pratique si vous devez changer fréquemment la taille de ce tableau.<br>
-                Dans ce cas, vous préférerez d’autres structures de données, telles que les listes chaînées.</p>
+                Autrement dit, il n'est pas possible d'ajouter ou supprimer les données d’un tableau.<br>
+                Il faut en faire une copie intégrant les ajouts ou suppressions.<br>
+                Ce n’est pas très pratique s'il faut changer fréquemment la taille de ce tableau.<br>
+                Dans ce cas, d’autres structures de données sont préférables, telles que les listes chaînées.</p>
         </div>
     </section>
 </div>
@@ -58,7 +68,7 @@
             <p>Une liste chaînée (singly-linked list, en anglais) est un ensemble de valeurs enregistrées<br>
             dans des endroits différents de la mémoire.<br>
             À la différence d’un tableau qui contient un nombre fixe d’éléments, la liste chaînée est très souple :<br>
-            vous pouvez ajouter ou supprimer des éléments à votre guise.<br>
+            Il est possible d'ajouter ou supprimer des éléments à sa convenance.<br>
             Ainsi, une liste chaînée est une structure de données linéaire qui comprend une série de nœuds connectés.<br>
             Ici, chaque nœud stocke les données et l'adresse du nœud suivant ;<br>
             le dernier élément de la liste aura une adresse vide.</p>
@@ -66,48 +76,96 @@
         <img class="mx-auto d-block" alt="100%x280" src="{% static 'img6/ls_chain.png' %}"><br>
     </section>
     <div class="article">
-        <p>Une liste chaînée (singly-linked list, en anglais) est un ensemble de valeurs enregistrées<br>
-            dans des endroits différents de la mémoire. À la différence d’un tableau<br>
-            qui contient un nombre fixe d’éléments, la liste chaînée est très souple :<br>
-            vous pouvez ajouter ou supprimer des éléments à votre guise.<br>
-            Ainsi, une liste chaînée est une structure de données linéaire qui comprend une série de nœuds connectés.<br>
-            Ici, chaque nœud stocke les données et l'adresse du nœud suivant ;<br>
-            le dernier élément de la liste aura une adresse vide.</p>
-    </div>
-    <div class="article">
         <p>Avantages et inconvénients:<br>
-            Dans une liste chaînée, vous pouvez facilement ajouter un élément en début de liste<br>
+            Dans une liste chaînée, on peut facilement ajouter un élément en début de liste<br>
             et ensuite ajouter de nouveaux éléments en queue de liste. Mais c’est un peu plus compliqué,<br>
-            car il vous faut parcourir toute la liste avant de trouver un nœud dont l’adresse est vide.<br>
-            Concernant la recherche d’un élément, vous allez devoir parcourir la liste<br>
+            car il faut parcourir toute la liste avant de trouver un nœud dont l’adresse est vide.<br>
+            Concernant la recherche d’un élément, il faut parcourir la liste<br>
             du début à la fin jusqu’à le trouver.</p>
         <p>Avantages et inconvénients:<br>
-            Parfois, vous êtes amené à associer deux éléments ensemble, mais actuellement,<br>
-            vous ne pouvez pas simplement associer un index et un élément avec les listes chaînées.<br>
-            Les tables de hachage vont vous permettre d’associer deux éléments de type quelconque.<br>
-            On parlera alors ici de l’association d’une clé et d’une valeur.</p>
+            Parfois, nous sommes amenés à associer deux éléments ensemble, mais actuellement,<br>
+            nous ne pouvons pas simplement associer un index et un élément avec les listes chaînées.<br>
+            Les tables de hachage vont permettre d’associer deux éléments de type quelconque.<br>
+            Nous parlons alors ici de l’association d’une clé et d’une valeur.</p>
         <p>Tables de hachage: <br>
-            Une table de hachage est une structure de données qui vous permet d’associer une valeur<br>
+            Une table de hachage est une structure de données qui permet d’associer une valeur<br>
             à une clé et non plus à un indice. Cette clé peut être un mot ou un chiffre.</p>
     </div>
     <div class="article">
         <p>Les tables de hachage ne comportent pas d’ordre. Contrairement aux tableaux,<br>
-            vous ne pouvez pas retrouver un élément via sa position, mais uniquement via sa clé.</p>
-    </div>
-    <div class="article">
-        <p>Les tables de hachage ne comportent pas d’ordre. Contrairement aux tableaux,<br>
-            vous ne pouvez pas retrouver un élément via sa position, mais uniquement via sa clé.</p>
+            nous ne pouvons pas retrouver un élément via sa position, mais uniquement via sa clé.</p>
     </div>
     <div class="article">
         <p>Piles</p>
-        <p>LIFO: "Last In First Out</p>
-        <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil1.png'' %}">
+        <p>LIFO: "Last In First Out</p><br>
+        <div class="img_center">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil1.png' %}">
+        </div>
     </div>
 
     <div class="article">
-        <p>Piles</p>
-        <p>FiFO: "Firs In First Out</p>
-        <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil2.png'' %}">
+        <p>Files(queues(Anglais)</p>
+        <p>FiFO: "Firs In First Out</p><br>
+        <div class="img_center">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img6/pil2.png' %}">
+        </div>
+    </div>
+    <div class="article">
+        <p>Arbre binaire:</p>
+        <p>un arbre binaire est une structure analogue à une liste chaînée,<br>
+            sauf que chaque cellule possède jusqu’à deux suivantes.<br>
+        Pour trouver une information dans un arbre binaire, il faut parcourir tous ses nœuds.<br>
+        On peut utiliser une fonction récursive à cet effet, c'est à dire une fonction qui s'appelle elle même,<br>
+                en boucle, jusqu'à atteindre une condition d'arrêt.</p>
+        <div class="img_center">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img6/arbre.png' %}">
+        </div>
+        <p>Graphes:
+        Les graphes sont utilisés, par des algorithmes, dont la fonction est de trouver le plus court chemin entre<br>
+        deux points.</p>
+        <div class="img_center">
+            <img class="img-fluid" alt="100%x280" src="{% static 'img6/graphe.png' %}">
+        </div>
+        <div class="article">
+            <h4>Exemple d'applications: Developper un algorithme optimisant l'achat d'actions</h4>
+            <p>La somme dont on dispose ainsi que le panel d'actions(n) et la durée, ont une valeur limite.</p>
+            <p>- naive: Execution séquentielle du tri, rapide, mais ne fournit pas la meilleure solution.<br>
+            <p>- Brute Force binaire: Calcule toutes les possibilités(2^n) et retourne le meilleur rendement<br>
+                en triant et comparant les résultats. Le résulata est satisfaisant, et le traitement est long.</p>
+            <p>- Brute Force avec traitement récursif: Même résultat, mais le traitement est bien plus rapide.<p>
+            <p>- optimisée (dynamique): Suppression des doublons, et des combinaisons sans intérêts. Le résultat est<br>
+                 rapide, et amélioré.</p>
+            <div class="img_center">
+                <img class="img-fluid" alt="100%x280" src="{% static 'img6/algo_dyn.png' %}">
+            </div>
+        </div>
+        <hr>
+        <div class="article">
+            <h2>Concept de la complexité</h2><br>
+            <p>C'est une approche complémentaire destinée à considérer la somme des ressources utilisées<br>
+                par la machine, en particulier la mémoire,  mais également à moindre échelle le processeur.<br>
+                Nous parlons alors de complexité spatiale.<br>
+                Une notation standard à été crée afin de mesurer la performance d’un algorithme, et elle se nomme:<br>
+                Big 0</p>
+            <h4>Dans l'exemple précédent:</h4>
+            <p>Solution naive:<br>
+            La complexité est linéaire.<br>
+                - Complexité temporelle: O(n)<br>
+                - Complexité spatiale: 0(n)<br>
+            </p>
+            <p>Solution Brute Force binaire:<br>
+            La complexité est exponentielle.<br>
+                - Complexité temporelle: 0(2^n) n=20<br>
+                - Complexité spatiale: 0(n)</p>
+            <p>Solution Brute Force recursive:<br>
+            La complexité est linéaire.<br>
+                - Complexité temporelle: O(n)<br>
+                - Complexité spatiale: O(n2)</p>
+            <p>Solution dynamique:<br>
+            La complexité est linéaire.<br>
+                - Complexité temporelle: O(nlog(n))<br>
+                - Complexité spatiale: O(n)</p>
+        </div>
     </div>
 </div>
 

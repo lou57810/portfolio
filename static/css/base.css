@@ -4,6 +4,10 @@ h1 {
     text-align: center;
 }
 
+container{
+    text-align: center;
+}
+
 h2 {
     text-align: center;
 }
@@ -12,22 +16,34 @@ h3 {
     text-align: center;
 }
 
-header {
-    background:grey;
-    position: relative;
-    color:#fff;
-}
-
-banner {
+.app_name {
+    text-align: center;
     display: flex;
     justify-content: center;
 }
+.header {
+    position: relative;
+}
 
-#logo
-{
-position: absolute;
-left:0;
+.header_title {
+    text-align: center;
+}
 
+#logo {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5em;
+}
+
+.banner {
+    padding: 0.2em;
+    display: flex;
+}
+
+.img-fluid {
+    .img-fluid.max-width: 100%;
+    height: auto;
 }
 
 .navbar h1 {
@@ -80,7 +96,8 @@ section {
 
 }
 
-img_center {
+.img_center {
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 
