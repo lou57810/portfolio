@@ -12,7 +12,7 @@
     </section>
     <section class="py-5 bg-light">
         {% for photo in photos %}
-            <img src="{{ photo.image.url }}"
+            <img src="{{ photo.image.url }}">
             <p>{{ photo.caption }}</p>
         {% endfor %}
     </section>

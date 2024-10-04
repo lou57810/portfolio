@@ -54,11 +54,13 @@
                                     <li><a class="dropdown-item" href="{% url 'p13' %}">Projet13</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p14' %}">Projet14</a></li>
                                     <li><a class="dropdown-item" href="{% url 'p15' %}">Projet15</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'p15' %}">Projet16</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p16' %}">Projet16</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p17' %}">Projet17</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'p18' %}">Projet18</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#contact" class="nav-link text-light px-3">Contact</a>
+                                <a href="{% url 'contacts' %}" class="nav-link text-light px-3">Contacts</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'memento_display' %}" class="nav-link text-light px-3">Memento</a>
@@ -67,10 +69,10 @@
                             {% if user.is_authenticated %}
 
                             <li class="nav-item">
-                                <a href="#params" class="nav-link text-light px-3">Parametres</a>
+                                <a href="{% url 'params' %}" class="nav-link text-light px-3">Parametres</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#favoris" class="nav-link text-light px-3">Favoris</a>
+                                <a href="{% url 'favoris' %}" class="nav-link text-light px-3">Favoris</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'album-photos' %}" class="nav-link text-light px-3">Album Photo</a>

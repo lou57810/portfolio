@@ -92,13 +92,15 @@ main .signup_container .wrapper {
     backdrop-filter: blur;
 }
 
-section {
-
-}
-
 .img_center {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-
 }
+
+.background-image {
+            background-image: url("static/img1.jpg"); /* Remplacez par le chemin de votre image */
+            background-size: cover; /* Ajuste l'image pour couvrir tout l'élément */
+            background-position: center; /* Centrer l'image */
+            height: 100vh; /* Hauteur de l'écran */
+            }

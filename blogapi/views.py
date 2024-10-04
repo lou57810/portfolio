@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower
 
 from . import forms, models
 
@@ -11,10 +12,8 @@ def home(request):
 
 
 def memento_display(request):
-    # item_name alpha display.
-    memento_items = models.MementoItems.objects.all().order_by('item_name')
+    memento_items = models.MementoItems.objects.all().order_by(Lower('item_name'))
     item_form = forms.ItemForm()
-
     context = {'item_form': item_form, 'memento_items': memento_items}
     return render(request, 'blogapi/memento.html', context=context)
 
@@ -204,6 +203,26 @@ def display_project_15(request):
 
 def display_project_16(request):
     return render(request, 'blogapi/p16.html')
+
+
+def display_project_17(request):
+    return render(request, 'blogapi/p17.html')
+
+
+def display_project_18(request):
+    return render(request, 'blogapi/p18.html')
+
+
+def display_contacts(request):
+    return render(request, 'blogapi/contacts.html')
+
+
+def display_params(request):
+    return render(request, 'blogapi/params.html')
+
+
+def display_favoris(request):
+    return render(request, 'blogapi/favoris.html')
 
 
 @login_required
