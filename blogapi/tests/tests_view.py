@@ -1,4 +1,4 @@
-from ..source import reverse_str
+from blogapi.tests.source import reverse_str
 
 
 def test_should_reverse_string():
