@@ -10,10 +10,10 @@
                 <h1>Memento</h1>
                 {% if item_form.instance.id %}
 
-                <form method="POST" action="{% url 'memento_create' id_item=item_form.instance.id %}">
+                <form method="POST" action="{% url 'add_memento' id_item=item_form.instance.id %}">
 
                 {% else %}
-                    <form method="POST" action="{% url 'memento_create' %}">
+                    <form method="POST" action="{% url 'add_memento' %}">
 
                 {% endif %}
                     {{ item_form.as_p }}

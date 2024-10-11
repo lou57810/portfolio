@@ -6,12 +6,12 @@
     <section class="py-5 bg-light">
         <div class="header">
             <div class="header_title">
-               <img class="img-fluid" alt="100%x280" src="{% static 'img8/logo.png'' %}" id="logo"><br><br>
+               <img class="img-fluid" alt="100%x280" src="{% static 'img8/logo.png' %}" id="logo"><br><br>
                <h1>SoftDesk</h1>
                <h2>Créez une API sécurisée RESTful en utilisant Django REST</h2>
             </div><br><br>
             <div class="banner">
-                <img class="img-fluid" alt="100%x280" src="{% static 'img8/banner.png'' %}">
+                <img class="img-fluid" alt="100%x280" src="{% static 'img8/banner.png' %}">
             </div>
         </div>
     </section>
@@ -32,9 +32,61 @@
 <div class="container">
     <section class="py-5 bg-light">
         <div class="article">
-            <h4></h4>
+            <h4>API: Application Programming Interface</h4><br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img8/api.png' %}"><br><br>
+            <p>L'api est un moyen de communication entre deux logiciels locaux ou distants, <br>
+                que ce soit entre composants d'une application ou entre deux applications différentes: <br>
+                transmettre, partager et échanger des informations, de manière fluide et uniforme,<br>
+                en collaborant pour accomplir des tâches spécifiques.</p>
+            <p>Les API permettent de centraliser toute l’information en ayant moins de données et de logique métier<br>
+            à gérer dans les terminaux. Une seule application Backend proposant une API<br>
+            peut être mutualisée et être consommée par une application Front,<br>
+            des applications mobiles Android/iOS, mais aussi d’autres systèmes d’information, des partenaires, etc.</p>
+            <p>Une api permet la communication entre une app client et une app serveur: elle sert d'intermédiaire:<br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img8/client_serveur.png' %}"><br><br>
+            </p>
+            <p>Api privées: elle permet uniquement aux utilisateurs autorisés de l'application d'utiliser l’API<br>
+            qui peut accéder à la base de données.</p>
+            <p>Api publique: Disponibles à tous<br></p>
+            <p>Il est possible de restreindre l'accès à une Api à des utilisateurs authentifiés ou bénéficiant d'un niveau<br>
+            d'accès sélectif.</p>
         </div>
     </section>
 </div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>DRF: Django Rest Framework</h4>
+            <h5>REST:</h5>
+                <span STYLE="padding:0 0 0 20px;"><b>- Client-serveur séparation:</b></span><br>
+                    <span STYLE="padding:0 0 0 40px;">- Le client: application, logiciel ou navigateur, formule une requête, via l'Api</span><br>
+                    <span STYLE="padding:0 0 0 40px;">- Serveur: Il récupère et transmet les réponses depuis la base de données.</span><br>
+                <span STYLE="padding:0 0 0 20px;"><b>- Stateless: Le serveur ne sauvegarde aucune des requêtes ou réponses précédentes.</b></span><br>
+                    <span STYLE="padding:0 0 0 40px;">- Le code devra être précis, et la réponse déterminée et compréhensible.</span><br>
+                <span STYLE="padding:0 0 0 20px;"><b>- Cacheable</b></span><br>
+                <span STYLE="padding:0 0 0 40px;">- La réponse peut être mise en cache et renvoyer la même réponse avec son n° de version si la requête est identique.</span><br>
+                <span STYLE="padding:0 0 0 20px;"><b>- Uniforme Interface</b></span><br>
+                <span STYLE="padding:0 0 0 40px;">- Chaque développeur doit utiliser les mêmes normes. Les données doivent être identifiées par un nom ou une adresse web (uri: uniforme ressource identifier)</span><br>
+                <span STYLE="padding:0 0 0 20px;"><b>- Layered system</b></span><br>
+                <span STYLE="padding:0 0 0 40px;">- Chaque composant qui utilise REST n’a pas accès aux composants au-delà du composant précis avec lequel il interagit.</span><br>
+                <span STYLE="padding:0 0 0 20px;"><b>- Code on demand</b></span><br>
+                <span STYLE="padding:0 0 0 40px;">- Le code à la demande signifie que le serveur peut étendre sa fonctionnalité en envoyant le code au client pour téléchargement.</span></h4>
+
+            <p>- Les actions à utiliser:</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img8/crud.png' %}"><br><br>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>Postman</h4>
+
+        </div>
+    </section>
+</div>
+
+facilite la construction de nos requêtes.
 
 {% endblock content %}

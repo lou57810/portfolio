@@ -236,275 +236,278 @@
 <section id="portfolio" class="pt-5 pb-5">
     <div class="container">
         <h2 class="mb-0">Mon portfolio</h2>
-        <h3 class="fw-light fs-5">Projets perso et pro</h3>
+        <h3 class="fw-light fs-5">Etudes</h3>
         <div class="row">
-            <div class="col-6">
-                <!--<h3 class="mb-3">Carousel cards title </h3>-->
-            </div>
             <div class="col-6 text-right">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                     <i class="fa fa-arrow-left"></i>
                 </a>
-                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
                     <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img1.png' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet1</h4>
-                                            <p><b>Titre: Utilisez les bases de Python pour l'analyse de marché.</b></p>
-                                            <p class="card-text">"Books online." Git, env, Web Scraping with beautiful soup.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#p1.html" aria-controls="info_projet1">En savoir plus</button>-->
-                                            <a href="{% url 'p1' %}" class="btn btn-primary" >View Project1 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'images/img1.png' %}" role="button" >Max</a>
-                                        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-12">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img1.png' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet1</h4>
+                                        <p><b>Titre: Utilisez les bases de Python pour l'analyse de marché.</b></p>
+                                        <p class="card-text">"Books online." Git, env, Web Scraping with beautiful soup.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#p1.html" aria-controls="info_projet1">En savoir plus</button>-->
+                                        <a href="{% url 'p1' %}" class="btn btn-primary" >View Project1 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'images/img1.png' %}" role="button" >Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img2.png' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet2</h4>
-                                            <p><b>Titre: Désignez une application Python adaptée aux besoins d'un client.</b></p>
-                                            <p class="card-text">"CodeIguanas." Creation with Figma.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet2" aria-controls="info_projet2">En savoir plus</button>-->
-                                            <a href="{% url 'p2' %}" class="btn btn-primary" >View Project2 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img2.png' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img2.png' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet2</h4>
+                                        <p><b>Titre: Désignez une application Python adaptée aux besoins d'un client.</b></p>
+                                        <p class="card-text">"CodeIguanas." Gestion de projets 'Agile'. <br>
+                                            Creation with Figma.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet2" aria-controls="info_projet2">En savoir plus</button>-->
+                                        <a href="{% url 'p2' %}" class="btn btn-primary" >View Project2 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img2.png' %}" role="button" >Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img3.png' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet3</h4>
-                                            <p><b>Titre: Développez un programme logiciel en Python</b></p>
-                                            <p class="card-text">"Tournament Chess Program." Tkinter, ExpertGit, Design pattern structure MVC, POO, Pep8.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet3" aria-controls="info_projet3">En savoir plus</button>-->
-                                            <a href="{% url 'p3' %}" class="btn btn-primary" >View Project3 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img3.png' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img3.png' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet3</h4>
+                                        <p><b>Titre: Développez un programme logiciel en Python</b></p>
+                                        <p class="card-text">"Tournament Chess Program." Tkinter, ExpertGit, Design pattern structure MVC, POO, Pep8.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet3" aria-controls="info_projet3">En savoir plus</button>-->
+                                        <a href="{% url 'p3' %}" class="btn btn-primary" >View Project3 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img3.png' %}" role="button" >Max</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img4.jpg' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet4</h4>
-                                            <p><b>Titre: Testez votre maîtrise du langage Python.</b></p>
-                                            <p class="card-text">Exercices code.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet4" aria-controls="info_projet4">En savoir plus</button>-->
-                                            <a href="{% url 'p4' %}" class="btn btn-primary" >View Project4 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img4.jpg' %}" role="button" >Max</a>
-                                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img4.jpg' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet4</h4>
+                                        <p><b>Titre: Testez votre maîtrise du langage Python.</b></p>
+                                        <p class="card-text">Exercices code. Tests algorithmiques<br>
+                                        Tests de developpement</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet4" aria-controls="info_projet4">En savoir plus</button>-->
+                                        <a href="{% url 'p4' %}" class="btn btn-primary" >View Project4 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img4.jpg' %}" role="button" >Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img5.jpg' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet5</h4>
-                                            <p><b>Titre: Développez une interface utilisateur pour une application web Python.</b></p>
-                                            <p class="card-text">Just stream it. HTML Css Sass </p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet5" aria-controls="info_projet5">En savoir plus</button>-->
-                                            <a href="{% url 'p5' %}" class="btn btn-primary" >View Project5 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img5.jpg' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img5.jpg' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet5</h4>
+                                        <p><b>Titre: Développez une interface utilisateur pour une application web Python.</b></p>
+                                        <p class="card-text">Just stream it. HTML Css Sass </p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet5" aria-controls="info_projet5">En savoir plus</button>-->
+                                        <a href="{% url 'p5' %}" class="btn btn-primary" >View Project5 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img5.jpg' %}" role="button" >Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img6.jpg' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet6</h4>
-                                            <p><b>Titre: Résolvez des problèmes en utilisant des algorithmes en Python.</b></p>
-                                            <p class="card-text">Algos Notation Big O, brute force, optimisation.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet6" aria-controls="info_projet6">En savoir plus</button>-->
-                                            <a href="{% url 'p6' %}" class="btn btn-primary" >View Project6 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img6.jpg' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img6.jpg' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet6</h4>
+                                        <p><b>Titre: Résolvez des problèmes en utilisant des algorithmes en Python.</b></p>
+                                        <p class="card-text">Algos Notation Big O, brute force, optimisation.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet6" aria-controls="info_projet6">En savoir plus</button>-->
+                                        <a href="{% url 'p6' %}" class="btn btn-primary" >View Project6 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img6.jpg' %}" role="button" >Max</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img7.png' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet7</h4>
-                                            <p><b>Titre: Développez une application web en utilisant django.</b></p>
-                                            <p class="card-text">Django</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
-                                            <a href="{% url 'p7' %}" class="btn btn-primary" >View Project7 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img7.png' %}" role="button">Max</a>
-                                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img7.png' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet7</h4>
+                                        <p><b>Titre: Développez une application web en utilisant django.</b></p>
+                                        <p class="card-text">Django</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
+                                        <a href="{% url 'p7' %}" class="btn btn-primary" >View Project7 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img7.png' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img8.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet8</h4>
-                                            <p><b>Titre: Créez une API sécurisée RESTful en utilisant Django REST.</b></p>
-                                            <p class="card-text">Postman, OAUTH2, OWASP, RGPD, Green Code.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
-                                            <a href="{% url 'p8' %}" class="btn btn-primary" >View Project8 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img8.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img8.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet8</h4>
+                                        <p><b>Titre: Créez une API sécurisée RESTful en utilisant Django REST FrameWork (DRF).</b></p>
+                                        <p class="card-text">Postman, OAUTH2, OWASP, RGPD, Green Code.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
+                                        <a href="{% url 'p8' %}" class="btn btn-primary" >View Project8 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img8.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img9.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet9</h4>
-                                            <p><b>Titre: Améliorez une application Web Python par des tests et du débogage.</b></p>
-                                            <p class="card-text">Django Bootstrap</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
-                                            <a href="{% url 'p9' %}" class="btn btn-primary" >View Project9 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img9.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img9.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet9</h4>
+                                        <p><b>Titre: Améliorez une application Web Python par des tests et du débogage.</b></p>
+                                        <p class="card-text">Django Bootstrap</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
+                                        <a href="{% url 'p9' %}" class="btn btn-primary" >View Project9 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img9.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img10.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet10</h4>
-                                            <p><b>Titre: Développez une architecture back-end sécurisée avec python et SQL.</b></p>
-                                            <p class="card-text">"Epic Events" Django-Postman-RestApi.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet10" aria-controls="info_projet10">En savoir plus</button>-->
-                                            <a href="{% url 'p10' %}" class="btn btn-primary" >View Project10 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img10.jpg' %}" role="button">Max</a>
-                                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img10.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet10</h4>
+                                        <p><b>Titre: Développez une architecture back-end sécurisée avec python et SQL.</b></p>
+                                        <p class="card-text">"Epic Events" Django-Postman-RestApi.</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet10" aria-controls="info_projet10">En savoir plus</button>-->
+                                        <a href="{% url 'p10' %}" class="btn btn-primary" >View Project10 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img10.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img11.png' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet11</h4>
-                                            <p><b>Titre: Mettez à l'echelle une application Django en utilisant une architecture modulaire.</b></p>
-                                            <p class="card-text">Sentry méthodologie ci/cd, docker gunicorn, render.</p>
-                                            <!--<a class="btn btn-primary" data-bs-toggle="collapse" href="" aria-controls="info_projet11">View Articles</a>-->
-                                            <a href="{% url 'p11' %}" class="btn btn-primary" >View Project11 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img11.png' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img11.png' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet11</h4>
+                                        <p><b>Titre: Mettez à l'echelle une application Django en utilisant une architecture modulaire.</b></p>
+                                        <p class="card-text">Sentry méthodologie ci/cd, docker gunicorn, render.</p>
+                                        <!--<a class="btn btn-primary" data-bs-toggle="collapse" href="" aria-controls="info_projet11">View Articles</a>-->
+                                        <a href="{% url 'p11' %}" class="btn btn-primary" >View Project11 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img11.png' %}" role="button" >Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img12.jpg' %}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet12</h4>
-                                            <p class="card-text">Python-Sqlachemy-MySQL</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet12" aria-controls="info_projet12">En savoir plus</button>-->
-                                            <a href="{% url 'p12' %}" class="btn btn-primary" >View Project12 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img12.jpg' %}" role="button" >Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img12.jpg' %}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet12</h4>
+                                        <p><b> class="card-text">Python-Sqlachemy-MySQL</b></p>
+                                        <p>Flask</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet12" aria-controls="info_projet12">En savoir plus</button>-->
+                                        <a href="{% url 'p12' %}" class="btn btn-primary" >View Project12 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img12.jpg' %}" role="button" >Max</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img13.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet13</h4>
-                                            <p><b>Titre: Essai libre cuisine.</b></p>
-                                            <p class="card-text">Django</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
-                                            <a href="{% url 'p13' %}" class="btn btn-primary" >View Project13 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img13.jpg' %}" role="button">Max</a>
-                                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img13.png' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet13</h4>
+                                        <p><b>Titre: Postman</b></p>
+                                        <p class="card-text">Postman</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
+                                        <a href="{% url 'p13' %}" class="btn btn-primary" >View Project13 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img13.png' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img14.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet14</h4>
-                                            <p><b>Titre: Essai libre moto</b></p>
-                                            <p class="card-text">Postman, OAUTH2, OWASP, RGPD, Green Code.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
-                                            <a href="{% url 'p14' %}" class="btn btn-primary" >View Project14 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img14.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img14.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet14</h4>
+                                        <p><b>Titre: Figma</b></p>
+                                        <p class="card-text">Figma</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
+                                        <a href="{% url 'p14' %}" class="btn btn-primary" >View Project14 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img14.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img15.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet15</h4>
-                                            <p><b>Titre: Essai libre photo</b></p>
-                                            <p class="card-text">Django Bootstrap</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
-                                            <a href="{% url 'p15' %}" class="btn btn-primary" >View Project15 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img15.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img15.png' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet15</h4>
+                                        <p><b>Titre: Notion</b></p>
+                                        <p class="card-text">Notion</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
+                                        <a href="{% url 'p15' %}" class="btn btn-primary" >View Project15 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img15.png' %}" role="button">Max</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img16.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet16</h4>
-                                            <p><b>Titre: Essai libre cuisine.</b></p>
-                                            <p class="card-text">Django</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
-                                            <a href="{% url 'p13' %}" class="btn btn-primary" >View Project13 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img16.jpg' %}" role="button">Max</a>
-                                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img16.png' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet16</h4>
+                                        <p><b>Titre: Symphony</b></p>
+                                        <p class="card-text">Symphony</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet7" aria-controls="info_projet7">En savoir plus</button>-->
+                                        <a href="{% url 'p16' %}" class="btn btn-primary" >View Project16 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img16.png' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img17.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet17</h4>
-                                            <p><b>Titre: Essai libre moto</b></p>
-                                            <p class="card-text">Postman, OAUTH2, OWASP, RGPD, Green Code.</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
-                                            <a href="{% url 'p14' %}" class="btn btn-primary" >View Project14 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img17.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img17.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet17</h4>
+                                        <p><b>Titre: React</b></p>
+                                        <p class="card-text">React</p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet8" aria-controls="info_projet8">En savoir plus</button>-->
+                                        <a href="{% url 'p17' %}" class="btn btn-primary" >View Project17 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img17.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img18.jpg' %}" >
-                                        <div class="card-body">
-                                            <h4 class="card-title">Projet18</h4>
-                                            <p><b>Titre: Essai libre photo</b></p>
-                                            <p class="card-text">Django Bootstrap</p>
-                                            <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
-                                            <a href="{% url 'p15' %}" class="btn btn-primary" >View Project15 Articles</a>
-                                            <a class="btn btn-primary" href="{% static 'img_home/img18.jpg' %}" role="button">Max</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-fluid" alt="100%x280" src="{% static 'img_home/img18.jpg' %}" >
+                                    <div class="card-body">
+                                        <h4 class="card-title">Projet18</h4>
+                                        <p><b>Titre: Projet fictif de vente produits photos</b></p>
+                                        <p>Django Rest, Api...</p>
+                                        <p class="card-text"></p>
+                                        <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#info_projet9" aria-controls="info_projet9">En savoir plus</button>-->
+                                        <a href="{% url 'p18' %}" class="btn btn-primary" >View Project18 Articles</a>
+                                        <a class="btn btn-primary" href="{% static 'img_home/img18.jpg' %}" role="button">Max</a>
                                     </div>
                                 </div>
                             </div>

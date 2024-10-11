@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.db.models.functions import Lower
 
 from . import forms, models
@@ -18,6 +18,7 @@ def memento_display(request):
     return render(request, 'blogapi/memento.html', context=context)
 
 
+# @permission_required('blog.add_memento', raise_exception=True)
 @login_required
 def memento_create(request, id_item=None):
     instance_item = models.MementoItems.objects.get(pk=id_item) if id_item is not None else None

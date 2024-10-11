@@ -4,26 +4,37 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 h3 {
     text-align: center;
 }
 
-header {
-    background:grey;
-    position: relative;
-    color:#fff;
+container{
+    text-align: center;
 }
 
-banner {
+#logo {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5em;
+}
+
+.header_title {
+    text-align: center;
+}
+
+.banner {
+    padding: 0.2em;
     display: flex;
-    justify-content: center;
 }
 
-#logo
-{
-position: absolute;
-left:0;
-
+.img-fluid {
+    .img-fluid.max-width: 100%;
+    height: auto;
 }
 
 .navbar h1 {
@@ -33,16 +44,6 @@ left:0;
 
 main {
     padding-top: 20px;
-}
-
-.avatar {
-    width: 45px;
-    height: 80px;
-    border-radius: 50%;
-    display: block;
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 main .wrapper {
@@ -71,3 +72,26 @@ main .signup_container .wrapper {
     border-radius: 20px;
     backdrop-filter: blur;
 }
+
+.avatar {
+    width: 45px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.img_center {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background-image {
+            background-image: url("static/img1.jpg"); /* Remplacez par le chemin de votre image */
+            background-size: cover; /* Ajuste l'image pour couvrir tout l'élément */
+            background-position: center; /* Centrer l'image */
+            height: 100vh; /* Hauteur de l'écran */
+            }

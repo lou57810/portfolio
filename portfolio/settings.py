@@ -20,19 +20,21 @@ sentry_sdk.init(
     profiles_sample_rate=1.0,
 )
 """
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-1_*8(#4bji4sj01d$%udblmym+g2qlvfuw3fmw5(ezjyj6@*dm'
+# SECRET_KEY = 'django-insecure-!vamxp_d-x$@3-r!4h3@pl#uxr2)wy$+413&ob4(e5m7&v8#1!'
 SECRET_KEY = os.getenv('SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 DEBUG = os.getenv('DEBUG')
-# DEBUG = DEBUG.lower() in ('true', '1', 'yes', 'on')
-print('debug:', DEBUG)
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,16 +66,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL = 'authentication.Subscriber'
 ROOT_URLCONF = 'portfolio.urls'
-"""
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-"""
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -99,7 +93,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -133,22 +134,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+LOGIN_URL = 'login'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-
-# STATIC_URL = '/staticfiles/'
-# STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
-# STATICFILES_DIRS = [BASE_DIR.joinpath('staticfiles/')]
-# STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
-# STATIC_ROOT = os.path.join(BASE_DIR / 'static')
-
-# LOGIN_URL = 'login'
-
-# Apres login redirection sur home
-LOGIN_REDIRECT_URL = 'home'
-# Default primary key field type
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 STATIC_URL = 'static/'
 
@@ -156,13 +145,9 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-fields
 MEDIA_URL = '/media/'   # images téléchargées par les utilisateurs loggés
 MEDIA_ROOT = BASE_DIR.joinpath('media/')
-# MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
-# MEDIA_ROOT = '/media/'
 
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-"""MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
-    MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
-    images téléversées."""
+AUTH_USER_MODEL = 'authentication.Subscriber'

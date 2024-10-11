@@ -21,3 +21,4 @@ if settings.DEBUG:
     MEDIA_URL est l'URL depuis laquelle Django va essayer de servir des medias.
     MEDIA_ROOT indique le répertoire local dans lequel seront sauvegardées les
     images téléversées."""
+

@@ -8,13 +8,13 @@
         <div class="row gy-4 align-items-center">
             <div class="col-12 col-md-6">
                 <h1>Todo</h1>
+                <!-- Il faut être loggé pour ajouter des tâches!-->
                 {% if todo_form.instance.id %}
-                <form method="POST" action="{% url 'todo-create' id_item=todo_form.instance.id %}">
-
+                    <form method="POST" action="{% url 'todo-create' id_item=todo_form.instance.id %}">
                 {% else %}
                     <form method="POST" action="{% url 'todo-create' %}">
-
                 {% endif %}
+
                     {{ todo_form.as_p }}
                     {% csrf_token %}
 

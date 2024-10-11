@@ -4,10 +4,6 @@ h1 {
     text-align: center;
 }
 
-container{
-    text-align: center;
-}
-
 h2 {
     text-align: center;
 }
@@ -16,16 +12,7 @@ h3 {
     text-align: center;
 }
 
-.app_name {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-.header {
-    position: relative;
-}
-
-.header_title {
+container{
     text-align: center;
 }
 
@@ -34,6 +21,10 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   height: 5em;
+}
+
+.header_title {
+    text-align: center;
 }
 
 .banner {
