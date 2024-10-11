@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required  # , permission_required
 from django.db.models.functions import Lower
 
 from . import forms, models
