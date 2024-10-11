@@ -78,6 +78,29 @@
         </div>
     </section>
 </div>
+
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>Installer et configurer DRF</h4>
+            <p>Django REST Framework est une librairie permettant la mise en place d’une API pour Django<br>
+            Basée sur le framework, elle propose la mise en place des endpoints d’une façon similaire à la mise en place des URL,<br>
+            Views et Forms de Django.</p>
+            <p>Comme pour les précédent projets, nous installons python, puis nous créons un environnement virtuel<br>
+            python (Rappel: python -m venv venv)<br>
+            On se place dans l'environnement virtuel avec git bash et la commande: source venv/Script/activate<br>
+            puis installons les dépendances avec pip (Rappel pip install django).<br>
+            Création du projet avec la commande `django-admin startproject mon_projet .`, et créer la ou les applications avec:<br>
+            python manage.py startapp `mon_app1` idem pour `mon_app2`...<br>
+            Ajouter alors dans INSTALLED_APPS[...] 'mon_app1', mon_app2, ... dans mon_projet/settings.py
+            Nous devons également installer DRF: `pip install djangorestframework`, et rajouter l'application `rest_framework` dans:<br>
+            INSTALLED_APPS[...] du fichier mon_projet/settings.py</p>
+
+            <p>Nous pouvons maintenant ajouter `urlpatterns = [path('api-auth/', include('rest_framework.urls'))]` dans mon_projet/urls.py</p>
+
+        </div>
+    </section>
+</div>
 <div class="container">
     <section class="py-5 bg-light">
         <div class="article">
