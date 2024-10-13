@@ -50,6 +50,11 @@
             <p>Api publique: Disponibles à tous<br></p>
             <p>Il est possible de restreindre l'accès à une Api à des utilisateurs authentifiés ou bénéficiant d'un niveau<br>
             d'accès sélectif.</p>
+            <p>Une api est nécessairement accompagnée d'une documentation, pour que les dev front-end puissent l'utiliser sans<br>
+            se préoccuper du back-end.<br>
+            Les Apis utilisent généralement le protocole http pour les messages de requêtes et fournissent une définition de <br>
+            la structure de réponse. Ces derniers sont exprimés sous la forme de fichiers XML ou JSON, dont les données sont plus<br>
+            faciles à exploiter pour les autres applications.</p>
         </div>
     </section>
 </div>
@@ -97,7 +102,20 @@
             INSTALLED_APPS[...] du fichier mon_projet/settings.py</p>
 
             <p>Nous pouvons maintenant ajouter `urlpatterns = [path('api-auth/', include('rest_framework.urls'))]` dans mon_projet/urls.py</p>
-
+        </div>
+    </section>
+    <section>
+        <h3>API</h3>
+        <h4>Mise en place</h4>
+        <p>Une Api doit permettre à un programme d'avoir accès aux éléments, catégories, sous-catégories dépendants de l'architecture d'un projet.<br>
+        Dans le cas de développeurs front-end, exploiter les endpoints pour adapter les pages d'un site web, tenant compte des droits utilisateurs.</p>
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>CRUD</h4>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img8/404.png' %}"><br><br>
         </div>
     </section>
 </div>
