@@ -76,7 +76,7 @@
                 <span STYLE="padding:0 0 0 20px;"><b>- Layered system</b></span><br>
                 <span STYLE="padding:0 0 0 40px;">- Chaque composant qui utilise REST n’a pas accès aux composants au-delà du composant précis avec lequel il interagit.</span><br>
                 <span STYLE="padding:0 0 0 20px;"><b>- Code on demand</b></span><br>
-                <span STYLE="padding:0 0 0 40px;">- Le code à la demande signifie que le serveur peut étendre sa fonctionnalité en envoyant le code au client pour téléchargement.</span></h4>
+                <span STYLE="padding:0 0 0 40px;">- Le code à la demande signifie que le serveur peut étendre sa fonctionnalité en envoyant le code au client pour téléchargement.</span><br>
 
             <p>- Les actions à utiliser:</p>
             <img class="img-fluid" alt="100%x280" src="{% static 'img8/crud.png' %}"><br><br>
@@ -104,26 +104,26 @@
             <p>Nous pouvons maintenant ajouter `urlpatterns = [path('api-auth/', include('rest_framework.urls'))]` dans mon_projet/urls.py</p>
         </div>
     </section>
-    <section>
+    <section class="py-5 bg-light">
         <h3>API</h3>
         <h4>Mise en place</h4>
         <p>Une Api doit permettre à un programme d'avoir accès aux éléments, catégories, sous-catégories dépendants de l'architecture d'un projet.<br>
         Dans le cas de développeurs front-end, exploiter les endpoints pour adapter les pages d'un site web, tenant compte des droits utilisateurs.</p>
     </section>
-</div>
-<div class="container">
     <section class="py-5 bg-light">
-        <div class="article">
-            <h4>CRUD</h4>
-            <img class="img-fluid" alt="100%x280" src="{% static 'img8/404.png' %}"><br><br>
-        </div>
+    <h4>JWT(Json Web Token)</h4>
+            <p>JWT est un jeton d’identification communiqué entre un serveur et un client.<br>
+               Il permet l’échange de données sécurisées entre ces derniers.</p>
+            <p>Installation de JWT:<br>
+            `pip install djangorestframework-simplejwt`</p>
     </section>
 </div>
+
+
 <div class="container">
     <section class="py-5 bg-light">
         <div class="article">
             <h4>Postman</h4>
-
         </div>
     </section>
 </div>

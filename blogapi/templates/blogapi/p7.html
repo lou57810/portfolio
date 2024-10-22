@@ -83,23 +83,149 @@
             </ul>
         </div>
     </section>
-    <section>
-        <h4>Modèle utilisateur et authentification:</h4>
-    </section>
-    <section>
-        <p>Les permissions</p>
-        <p>Dans le cas de ce projet portfolio, il n'est pas souhaitable que les 'subscribers' puissent modifier le Memento.<br>
-        Il nous faut donc restreindre l'accès à l'administrateur ou à des membres autorisés.<br>
-        Pour celà, nous devons attribuer des permissions aux différents utilisateurs.</p>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h3>Modèle utilisateur et authentification:</h3>
+            <h4>Django modèle 'User'</h4>
+            <p>User est un modèle Django fournis par défaut.<br>
+            - username<br>
+            - first_name<br>
+            - last_name<br>
+            - email<br>
+            - password<br>
+            - is_staff<br>
+            - is_active<br>
+            - is_superuser<br>
+            </p>
+            <p>Pour créer un modèle utilisateur plus personnalisé, Django dispose de deux classes de base qui peuvent être étendues<br>
+            pour répondre à des besoins spécifiques:<br>
+                - AbstractUser<br>
+                - AbstractBaseUser<br>
+            </p>
+
+        </div>
     </section>
 </div>
 <div class="container">
     <section class="py-5 bg-light">
-        <p>Vues basées sur des fonctions.</p>
-        <p>Vues basées sur des classes.</p>
-        <p>Vues génériques basées sur des classes.</p>
+        <h3>Les views</h3>
+        <h4>Vues basées sur des fonctions.</h4><br>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/views2.png' %}"><br><br>
+    </section>
+    <section class="py-5 bg-light">
+        <h4>Vues basées sur des classes.</h4><br>
+        <p>Les méthodes Get et Post sont séparées, ce qui permet plus de modularité (Chgt d'attribut, remplacement de gabarit<br>
+                et de formulaires plus faciles.) </p>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/views1.png' %}"><br><br>
+        <h4>Vues génériques basées sur des classes.</h4><br>
+        Les classes ont été imaginées pour créer des vues génériques qui sont plus flexibles et extensibles.<br>
+        Par exemple DetailView(Informations sur une instance spécifique d'un modèle) ou ListView(Liste les instances d'un modèle).</h4>
+        <p>Il est également possible de simplifier d'autres vues avec les vues génériques:  `https://ccbv.co.uk/` </p>
     </section>
 
 </div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>Page d'enregistrement et password validators.</h4>
+            <p>Création d'une page signup.html</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/signup_html.png' %}"><br><br>
+            <p>views.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/signup.png' %}"><br><br>
+            <p>validators.py: Configuration d'un validateur personnalisé.</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/validator.png' %}"><br><br>
+            <p>Modifier settings.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/settings_valid.png' %}"><br><br>
+            <p>Il existe de nombreuses fonctionnalités d'authentification et pour faciliter notre travail<br>
+            nous pouvons consulter le site: `https://djangopackages.org/` de la communauté de dévelppeurs, proposant des<br>
+            packages réutilisables.</p>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <div class="article">
+            <h4>Mise en ligne d'images</h4>
+            <p>models.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/mod1.png' %}"><br><br>
+            <p>forms.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/form1.png' %}"><br><br>
+            <p>views.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/views3.png' %}"><br><br>
+            <p>urls.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/urls1.png' %}"><br><br>
+            <p>photo_upload.html</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/html1.png' %}"><br><br>
+            <p>home.html</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/html2.png' %}"><br><br>
+        </div>
+        <div class="article">
+            <h4>Accompagner l'image d'un billet de blog</h4>
+            <p>forms.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/form2.png' %}"><br><br>
+            <p>models.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/model2.png' %}"><br><br>
+            <p>views.py</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/views4.png' %}"><br><br>
+            <p>Ajoutons `path('blog/create/', blog.views.blog_and_photo_upload, name='blog_create'),`<br>
+            dans urlpattern[...], puis la page html dans le dossier templates/blog/create_blog_post.html: </p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/html3.png' %}"><br><br>
+            <h4>Modifier ou supprimer un billet de blog</h4>
+            <p>Adaptons les fichiers forms.py, views.py et edit_blog.html</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/form3.png' %}"><br><br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/views5.png' %}"><br><br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/html4.png' %}"><br><br>
+            <h4>Inclure plusieurs instances du même formulaire avec des ensembles de formulaires, ou formsets</h4>
+            <p>Il est possible de remplir plusieurs formulaires avec l’objet request.POST dans une vue,<br>
+            et instancier plusieurs modèles depuis la même requête en utilisant les formsets.</p>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/formset.png' %}"><br><br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/formset1.png' %}"><br><br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/formset2.png' %}"><br><br>
+        </div>
+        <div class="article">
+            <h4>Surcharger les méthodes d'un modèle</h4>
+            <p>Comme exemple nous pouvons redéfinir la taille des images<br>
+            Il sera nécéssaire d'installet la bibliothèque Pillow :<br>
+            `pip install pillow` puis importer PIL:<br>
+                <img class="img-fluid" alt="100%x280" src="{% static 'img7/PIL.png' %}"><br><br>
+            La méhtode thumbnail permettra de redimensionner l'image avec la constante de classe :<br>
+            IMAGE_MAX_SIZE = (800, 800) qu'il sera aisé de redimensionner.<br>.</p>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <section class="py-5 bg-light">
+        <h3>Les permissions</h3>
+        <p>Le décorateur @login_required placé au-dessus d'une fonction n'autorise l'accès qu'à des utilisateurs authentifiés.<br>
+        Il est possible de gèrer plus finement l'accès à certaines fonctions :<br>
+        Les 'permissions' autorisent l'accès à des membres ou des groupes autorisés.<br>
+        Pour celà, nous devons attribuer des permissions aux différents groupes ou utilisateurs, <br>
+        et importer `permission_required` :<br>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/perm1.png' %}"><br><br>
+        Puis ajouter un second décorateur à la fonction visée :
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/perm2.png' %}"><br><br>
+        Et enfin ajouter l'attribut `perms` qui sera chargé dans le contexte du gabarit du fichier base.html :<br>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/perm3.png' %}"><br><br>
+        </p>
+        <h4>Attribution des permissions à plusieurs utilisateurs grâce aux groupes</h4>
+    </section>
+    <section>
+        <h4>Permissions accordées aux groupes</h4>
+        <p>Le but est de répartir les utilisateurs en groupes (sous-ensemble d'utilisateurs).<br>
+        Pour créer ces groupes automatiquement, il est nécéssaire de faire une migration personnalisée.<br>
+        Cela permet une copie du projet sans recréer manuellement les groupes.</p>
+        <p>Tout d'abord, créeons une migration vide avec la commande : `python manage.py makemigrations accounts --empty`.<br>
+        <img class="img-fluid" alt="100%x280" src="{% static 'img7/perm4.png' %}"><br><br>
+            Puis ajoutons une fonction permettant de créer ces groupes. Dans ce projet les groupes créateurs et subscribers.<br>
+            Ajoutons également `migrations.RunPython(create_groups)` dans le tableau opérations ce qui va éxecuter la fonction en<br>
+            dans la migration.<br>
+            <img class="img-fluid" alt="100%x280" src="{% static 'img7/perm5.png' %}"><br><br>
+
+        </p>
+    </section>
+</div>
+
 
 {% endblock content %}
